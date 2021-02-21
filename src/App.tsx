@@ -1,8 +1,13 @@
 import React from "react";
-import Home from "./views/home/index";
+import { BrowserRouter } from "react-router-dom";
+import AppRouter from "./Router";
 
-const App: React.FC = () => {
-  return <Home />;
+const App: React.FC = (): JSX.Element => {
+  return (
+    <BrowserRouter>
+      <AppRouter />
+    </BrowserRouter>
+  );
 };
 
 export default App;
