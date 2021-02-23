@@ -1,12 +1,16 @@
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
 import AppRouter from "./Router";
+import Header from "./components/header";
 
 const App: React.FC = (): JSX.Element => {
   return (
-    <BrowserRouter>
-      <AppRouter />
-    </BrowserRouter>
+    <>
+      <Header />
+      <BrowserRouter>
+        <AppRouter />
+      </BrowserRouter>
+    </>
   );
 };
 
