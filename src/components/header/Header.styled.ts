@@ -16,6 +16,7 @@ export const MenuWrapper = styled.div`
   gap: 2em;
 `;
 
-export const Menu = styled.div`
+export const Menu = styled.div<{ active: boolean }>`
   cursor: pointer;
+  color: ${(props) => (props.active ? "black" : "gray")};
 `;
