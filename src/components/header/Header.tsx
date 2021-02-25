@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import * as s from "./Header.styled";
 
 const Header = (): JSX.Element => {
-  const [menuState, setMenuState] = useState<Array<any>>();
+  const [menuState, setMenuState] = useState<Array<boolean>>();
 
   return (
     <s.HeaderContainer>
