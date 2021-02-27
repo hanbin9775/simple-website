@@ -1,11 +1,11 @@
 /**
  * @description home 화면
  */
-import React, { useState } from "react";
+import React from "react";
 import * as s from "./Header.styled";
 
 const Header = (): JSX.Element => {
-  const [menuState, setMenuState] = useState<Array<boolean>>();
+  // const [menuState, setMenuState] = useState<Array<boolean>>();
 
   return (
     <s.HeaderContainer>

@@ -2,7 +2,7 @@
 import styled from "styled-components";
 
 export const HomeContainer = styled.section`
-  padding: 24px 48px;
+  padding: 24px 20%;
 `;
 
 export const ImageWrapper = styled.div``;
