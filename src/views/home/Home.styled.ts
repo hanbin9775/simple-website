@@ -3,24 +3,31 @@ import styled from "styled-components";
 
 export const HomeContainer = styled.section`
   padding: 24px 20%;
+  background-image: url("https://t1.daumcdn.net/cfile/tistory/2767C4455934E5003B");
+  background-size: 100vw 100vh;
 `;
 
-export const ImageWrapper = styled.div``;
+export const HomeTitle = styled.h1`
+  font-size: 176px;
+  color: #22aa99;
+`;
 
-export const ImageWrapperRow = styled.div`
+export const ButtonWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
-  gap: 1em;
-  margin-top: 24px;
+  justify-content: center;
 `;
 
-export const HomeImage = styled.img`
-  background: gray;
+export const NextButton = styled.button`
+  background-color: #00a3a3;
   border: 1px solid white;
-  flex-grow: 1;
-  height: 300px;
-`;
+  padding: 18px 60px;
+  font-size: 36px;
+  font-weight: 800;
+  color: #fff;
+  border-radius: 10px;
 
-export const imageTest = styled.div<{ uri: string }>`
-  background-image: url(${(props) => props.uri});
+  &:hover {
+    background-color: white;
+    color: #00a3a3;
+  }
 `;
