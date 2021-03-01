@@ -12,8 +12,9 @@ const Home = (): JSX.Element => {
 
   useEffect(() => {
     async function fetchImageFromStorage() {
-      const urls = await firebaseStorage.ref("/1.png").getDownloadURL();
-      setImageUrl(urls);
+      const url = await firebaseStorage.ref("1.png").getDownloadURL();
+      setImageUrl(url);
+      console.log(url);
     }
 
     fetchImageFromStorage();
