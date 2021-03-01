@@ -20,3 +20,7 @@ export const HomeImage = styled.img`
   flex-grow: 1;
   height: 300px;
 `;
+
+export const imageTest = styled.div<{ uri: string }>`
+  background-image: url(${(props) => props.uri});
+`;
