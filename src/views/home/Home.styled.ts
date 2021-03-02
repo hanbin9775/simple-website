@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const HomeContainer = styled.section`
   padding: 24px 20%;
@@ -17,7 +18,7 @@ export const ButtonWrapper = styled.div`
   justify-content: center;
 `;
 
-export const NextButton = styled.button`
+export const NextButton = styled(Link)`
   background-color: #00a3a3;
   border: 1px solid white;
   padding: 18px 60px;
@@ -25,6 +26,7 @@ export const NextButton = styled.button`
   font-weight: 800;
   color: #fff;
   border-radius: 10px;
+  text-decoration: none;
 
   &:hover {
     background-color: white;
