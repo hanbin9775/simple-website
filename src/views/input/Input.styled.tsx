@@ -8,4 +8,13 @@ export const InputContainer = styled.section`
 export const DescribeText = styled.h2`
   font-size: 24px;
   text-align: center;
+  margin-bottom: 48px;
 `;
+
+export const InputWrapper = styled.div`
+  margin-bottom: 12px;
+`;
+
+export const InputLabel = styled.div``;
+
+export const InputBox = styled.input``;
