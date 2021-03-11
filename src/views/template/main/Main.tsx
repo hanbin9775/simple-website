@@ -14,17 +14,21 @@ const Main = ({
   return (
     <s.Container>
       <s.Gradient>
-        <s.Title>{title}</s.Title>
-        <s.Describe>{description}</s.Describe>
-        <s.ButtonWrapper>
-          <s.Button
-            to={{
-              pathname: moveTo,
-            }}
-          >
-            {buttonText}
-          </s.Button>
-        </s.ButtonWrapper>
+        <s.ContentWrapper>
+          <s.Title>{title}</s.Title>
+          <div>
+            <s.Describe>{description}</s.Describe>
+            <s.ButtonWrapper>
+              <s.Button
+                to={{
+                  pathname: moveTo,
+                }}
+              >
+                {buttonText}
+              </s.Button>
+            </s.ButtonWrapper>
+          </div>
+        </s.ContentWrapper>
       </s.Gradient>
     </s.Container>
   );
