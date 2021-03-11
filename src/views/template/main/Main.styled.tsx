@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 export const Container = styled.section`
   background-color: #5500ff;
+  width: 100%;
   height: 100vh;
 `;
 
@@ -18,7 +19,9 @@ export const Gradient = styled.div`
 `;
 
 export const Title = styled.h1`
+  font-family: "Irish Grover", cursive;
   font-size: 72px;
+  font-weight: 400;
   color: #fff;
   margin: 0 auto;
 `;
