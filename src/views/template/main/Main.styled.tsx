@@ -2,51 +2,46 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-export const MainContainer = styled.section`
-  padding: 10%;
+export const Container = styled.section`
+  background-color: #5500ff;
+  height: 100vh;
 `;
 
-export const DescribeText = styled.h2`
-  font-size: 24px;
+export const Gradient = styled.div`
+  padding: 0 30px;
+  height: 100%;
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.66) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+`;
+
+export const Title = styled.h1`
+  font-size: 72px;
+  color: #fff;
+  margin: 0 auto;
+`;
+
+export const Describe = styled.p`
+  font-size: 14px;
+  color: #fff;
   text-align: center;
   margin-bottom: 48px;
-`;
-
-export const InputWrapper = styled.div`
-  margin-bottom: 24px;
-  justify-content: center;
-  display: flex;
-  align-items: center;
-`;
-
-export const InputLabel = styled.div`
-  font-size: 24px;
-`;
-
-export const InputBox = styled.input`
-  height: 50px;
-  width: 33%;
-  margin-left: 25px;
 `;
 
 export const ButtonWrapper = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 48px;
+  margin-top: 24px;
 `;
 
-export const NextButton = styled(Link)`
-  background-color: #00a3a3;
-  border: 1px solid white;
-  padding: 18px 60px;
-  font-size: 36px;
-  font-weight: 800;
-  color: #fff;
-  border-radius: 10px;
+export const Button = styled(Link)`
+  width: 100%;
+  text-align: center;
+  padding: 8px 0;
+  background-color: #e8e8ed;
+  overflow: visible;
+  border-radius: 5px;
   text-decoration: none;
-
-  &:hover {
-    background-color: white;
-    color: #00a3a3;
-  }
 `;

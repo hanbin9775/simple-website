@@ -2,22 +2,16 @@
  * @description home 화면
  */
 import React from "react";
-import * as s from "./Home.styled";
+import Main from "views/template/main";
 
 const Home = (): JSX.Element => {
   return (
-    <s.HomeContainer>
-      <s.HomeTitle>Life Graph</s.HomeTitle>
-      <s.ButtonWrapper>
-        <s.NextButton
-          to={{
-            pathname: "/input",
-          }}
-        >
-          Start
-        </s.NextButton>
-      </s.ButtonWrapper>
-    </s.HomeContainer>
+    <Main
+      title="Stock Wizard"
+      description="당신의 인생은 기업의 주식과 닮아있어요"
+      buttonText="시작하기"
+      moveTo="/input"
+    />
   );
 };
 

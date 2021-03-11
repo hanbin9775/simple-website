@@ -3,21 +3,31 @@
  */
 import React from "react";
 import * as s from "./Main.styled";
+import { MainProp } from "./type";
 
-const Input = (): JSX.Element => {
+const Main = ({
+  title,
+  description,
+  buttonText,
+  moveTo,
+}: MainProp): JSX.Element => {
   return (
-    <s.MainContainer>
-      <s.ButtonWrapper>
-        <s.NextButton
-          to={{
-            pathname: "/",
-          }}
-        >
-          Next
-        </s.NextButton>
-      </s.ButtonWrapper>
-    </s.MainContainer>
+    <s.Container>
+      <s.Gradient>
+        <s.Title>{title}</s.Title>
+        <s.Describe>{description}</s.Describe>
+        <s.ButtonWrapper>
+          <s.Button
+            to={{
+              pathname: moveTo,
+            }}
+          >
+            {buttonText}
+          </s.Button>
+        </s.ButtonWrapper>
+      </s.Gradient>
+    </s.Container>
   );
 };
 
-export default Input;
+export default Main;
