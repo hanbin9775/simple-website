@@ -51,7 +51,6 @@ export const Button = styled(Link)`
   text-align: center;
   padding: 8px 0;
   background-color: #e8e8ed;
-  overflow: visible;
   border-radius: 5px;
   text-decoration: none;
 `;
