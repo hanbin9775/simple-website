@@ -2,8 +2,6 @@
  * @description home 화면
  */
 import React from "react";
-import { BsPerson } from "react-icons/bs";
-import { BiTime } from "react-icons/bi";
 import DraggableModal from "components/draggable";
 import * as s from "./Input.styled";
 
