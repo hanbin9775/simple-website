@@ -9,6 +9,7 @@ const Input = (): JSX.Element => {
   return (
     <s.InputContainer>
       <DraggableModal />
+      <s.InputBox />
       <s.ButtonWrapper>
         <s.NextButton
           to={{
