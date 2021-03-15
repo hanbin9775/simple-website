@@ -3,7 +3,8 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const InputContainer = styled.section`
-  padding: 10%;
+  width: 468px;
+  background-color: #5500ff;
 `;
 
 export const DescribeText = styled.h2`
