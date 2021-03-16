@@ -8,6 +8,10 @@ const DraggableModal = (): JSX.Element => {
       cancel=".not-draggable"
       axis="y"
       defaultPosition={{ x: 0, y: window.innerHeight - 200 }}
+      bounds={{
+        top: window.innerHeight - 400,
+        bottom: window.innerHeight - 200,
+      }}
     >
       <s.ModalContainer>
         <s.HandleWrapper>
