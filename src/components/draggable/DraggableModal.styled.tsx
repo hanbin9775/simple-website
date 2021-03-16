@@ -5,6 +5,8 @@ export const ModalContainer = styled.section`
   background-color: #e8e8ed;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+  position: relative;
+  z-index: 1;
 `;
 
 export const HandleWrapper = styled.div`

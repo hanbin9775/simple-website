@@ -7,10 +7,10 @@ const DraggableModal = (): JSX.Element => {
     <Draggable
       cancel=".not-draggable"
       axis="y"
-      defaultPosition={{ x: 0, y: window.innerHeight - 200 }}
+      defaultPosition={{ x: 0, y: window.innerHeight - 280 }}
       bounds={{
-        top: window.innerHeight - 400,
-        bottom: window.innerHeight - 200,
+        top: window.innerHeight - 480,
+        bottom: window.innerHeight - 280,
       }}
     >
       <s.ModalContainer>
