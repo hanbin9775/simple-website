@@ -10,6 +10,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 https://simple-website-9b56c.web.app/
 
+## Prototype
+<img width="249" alt="스크린샷 2021-03-19 오후 11 48 27" src="https://user-images.githubusercontent.com/37659866/111798650-9c9c4800-890d-11eb-965a-e5132f00e730.png">
+
+
 ## Using..
 
 React.Js with Typescript
