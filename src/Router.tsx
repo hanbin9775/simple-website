@@ -24,7 +24,7 @@ const AppRouter: React.FC = () => {
               classNames="page"
               unmountOnExit
             >
-              <div className="page">
+              <div className="page" style={{ height: window.innerHeight }}>
                 <Component />
               </div>
             </CSSTransition>
