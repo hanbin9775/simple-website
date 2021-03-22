@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap');
 
+html{
+  height: -webkit-fill-available;
+}
+
 body {
   margin: 0;
   overflow: hidden;
@@ -8,6 +12,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
 }
 
 code {
