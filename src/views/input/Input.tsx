@@ -9,7 +9,7 @@ import * as s from "./Input.styled";
 const Input = (): JSX.Element => {
   return (
     <s.InputContainer>
-      <DraggableModal />
+      <DraggableModal input1="이름" input2="나이" />
       <StepModal />
     </s.InputContainer>
   );

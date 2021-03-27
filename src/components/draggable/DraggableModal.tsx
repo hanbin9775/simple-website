@@ -1,8 +1,9 @@
 import React from "react";
 import Draggable from "react-draggable";
+import { ModalProp } from "type";
 import * as s from "./DraggableModal.styled";
 
-const DraggableModal = (): JSX.Element => {
+const DraggableModal = ({ input1, input2 }: ModalProp): JSX.Element => {
   return (
     <Draggable
       cancel=".not-draggable"
@@ -22,18 +23,12 @@ const DraggableModal = (): JSX.Element => {
           <s.Describe>당신에 대해 알려주세요</s.Describe>
 
           <s.InputWrapper>
-            <s.InputLabel>이름</s.InputLabel>
-            <s.InputBox
-              className="not-draggable"
-              placeholder="이름을 입력하세요"
-            />
+            <s.InputLabel>{input1}</s.InputLabel>
+            <s.InputBox className="not-draggable" placeholder={input1} />
           </s.InputWrapper>
           <s.InputWrapper>
-            <s.InputLabel>나이</s.InputLabel>
-            <s.InputBox
-              className="not-draggable"
-              placeholder="나이를 입력하세요"
-            />
+            <s.InputLabel>{input2}</s.InputLabel>
+            <s.InputBox className="not-draggable" placeholder={input2} />
           </s.InputWrapper>
         </s.ContentWrapper>
       </s.ModalContainer>
