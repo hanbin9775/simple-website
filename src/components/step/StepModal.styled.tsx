@@ -29,7 +29,7 @@ export const StepButtpn = styled(Link)<{ isFullfilled: boolean }>`
   width: 100%;
   height: 44px;
   margin-top: 30px;
-  background-color: #555555;
+  background-color: ${(props) => (props.isFullfilled ? "#4400AA" : "#555555")};
   font-size: 18px;
   color: #fff;
   border-radius: 8px;
