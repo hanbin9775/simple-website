@@ -51,6 +51,6 @@ export const Button = styled(Link)`
   text-align: center;
   padding: 8px 0;
   background-color: #e8e8ed;
-  border-radius: 5px;
+  border-radius: 8px;
   text-decoration: none;
 `;

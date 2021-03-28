@@ -3,7 +3,14 @@ import Draggable from "react-draggable";
 import { ModalProp } from "type";
 import * as s from "./DraggableModal.styled";
 
-const DraggableModal = ({ input1, input2 }: ModalProp): JSX.Element => {
+const DraggableModal = ({
+  input1,
+  value1,
+  onChangeInput1,
+  input2,
+  value2,
+  onChangeInput2,
+}: ModalProp): JSX.Element => {
   return (
     <Draggable
       cancel=".not-draggable"
@@ -24,11 +31,21 @@ const DraggableModal = ({ input1, input2 }: ModalProp): JSX.Element => {
 
           <s.InputWrapper>
             <s.InputLabel>{input1}</s.InputLabel>
-            <s.InputBox className="not-draggable" placeholder={input1} />
+            <s.InputBox
+              className="not-draggable"
+              placeholder={input1}
+              onChange={onChangeInput1}
+              value={value1}
+            />
           </s.InputWrapper>
           <s.InputWrapper>
             <s.InputLabel>{input2}</s.InputLabel>
-            <s.InputBox className="not-draggable" placeholder={input2} />
+            <s.InputBox
+              className="not-draggable"
+              placeholder={input2}
+              onChange={onChangeInput2}
+              value={value2}
+            />
           </s.InputWrapper>
         </s.ContentWrapper>
       </s.ModalContainer>

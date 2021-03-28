@@ -1,11 +1,21 @@
 import React from "react";
+import { StepProp } from "type";
 import * as s from "./StepModal.styled";
 
-const StepModal = (): JSX.Element => {
+const StepModal = ({ moveTo, isFullfilled }: StepProp): JSX.Element => {
   return (
     <s.ModalContainer>
       <s.ContentWrapper>
-        <s.StepButtpn>알려줄게요!</s.StepButtpn>
+        <s.ButtonWrapper>
+          <s.StepButtpn
+            to={{
+              pathname: moveTo,
+            }}
+            isFullfilled={isFullfilled}
+          >
+            알려줄게요!
+          </s.StepButtpn>
+        </s.ButtonWrapper>
       </s.ContentWrapper>
     </s.ModalContainer>
   );

@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const ModalContainer = styled.section`
   position: absolute;
@@ -18,7 +19,13 @@ export const ContentWrapper = styled.div`
   padding: 0 20px;
 `;
 
-export const StepButtpn = styled.button`
+export const ButtonWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+`;
+
+export const StepButtpn = styled(Link)<{ isFullfilled: boolean }>`
   width: 100%;
   height: 44px;
   margin-top: 30px;
@@ -27,4 +34,8 @@ export const StepButtpn = styled.button`
   color: #fff;
   border-radius: 8px;
   border: none;
+  text-align: center;
+  text-decoration: none;
+  line-height: 2.4em;
+  pointer-events: ${(props) => (props.isFullfilled ? "auto" : "none")};
 `;
