@@ -30,6 +30,7 @@ const Step1 = (): JSX.Element => {
   return (
     <s.InputContainer>
       <DraggableModal
+        step={1}
         title="STEP #1"
         description="당신에 대해 알려주세요"
         input1="이름"

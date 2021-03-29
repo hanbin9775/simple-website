@@ -1,9 +1,11 @@
 import React from "react";
 import Draggable from "react-draggable";
 import { ModalProp } from "type";
+import TextInput from "./content/TextInput";
 import * as s from "./DraggableModal.styled";
 
 const DraggableModal = ({
+  step,
   title,
   description,
   input1,
@@ -30,25 +32,18 @@ const DraggableModal = ({
         <s.ContentWrapper>
           <s.Title>{title}</s.Title>
           <s.Describe>{description}</s.Describe>
-
-          <s.InputWrapper>
-            <s.InputLabel>{input1}</s.InputLabel>
-            <s.InputBox
-              className="not-draggable"
-              placeholder={input1}
-              onChange={onChangeInput1}
-              value={value1}
+          {step === 1 ? (
+            <TextInput
+              input1={input1}
+              value1={value1}
+              input2={input2}
+              value2={value2}
+              onChangeInput1={onChangeInput1}
+              onChangeInput2={onChangeInput2}
             />
-          </s.InputWrapper>
-          <s.InputWrapper>
-            <s.InputLabel>{input2}</s.InputLabel>
-            <s.InputBox
-              className="not-draggable"
-              placeholder={input2}
-              onChange={onChangeInput2}
-              value={value2}
-            />
-          </s.InputWrapper>
+          ) : (
+            <>11</>
+          )}
         </s.ContentWrapper>
       </s.ModalContainer>
     </Draggable>
