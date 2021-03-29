@@ -1,4 +1,6 @@
 export interface ModalProp {
+  title: string;
+  description: string;
   input1: string;
   value1: string | undefined;
   input2: string;

@@ -6,7 +6,7 @@ import React from "react";
 // import StepModal from "components/step";
 import * as s from "./Input.styled";
 
-const Step1 = (): JSX.Element => {
+const Step2 = (): JSX.Element => {
   return (
     <s.InputContainer>
       {/* <DraggableModal input1="이름" input2="나이" />
@@ -15,4 +15,4 @@ const Step1 = (): JSX.Element => {
   );
 };
 
-export default Step1;
+export default Step2;

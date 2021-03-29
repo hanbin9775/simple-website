@@ -4,6 +4,8 @@ import { ModalProp } from "type";
 import * as s from "./DraggableModal.styled";
 
 const DraggableModal = ({
+  title,
+  description,
   input1,
   value1,
   onChangeInput1,
@@ -26,8 +28,8 @@ const DraggableModal = ({
           <s.Handle />
         </s.HandleWrapper>
         <s.ContentWrapper>
-          <s.Title>STEP #1</s.Title>
-          <s.Describe>당신에 대해 알려주세요</s.Describe>
+          <s.Title>{title}</s.Title>
+          <s.Describe>{description}</s.Describe>
 
           <s.InputWrapper>
             <s.InputLabel>{input1}</s.InputLabel>

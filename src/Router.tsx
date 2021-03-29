@@ -4,12 +4,14 @@ import { CSSTransition } from "react-transition-group";
 
 import Home from "views/home";
 import Step1 from "views/step1";
+import Step2 from "views/step2";
 
 import "route-styles.css";
 
 const routes = [
   { path: "/", name: "Home", Component: Home },
   { path: "/step1", name: "Step1", Component: Step1 },
+  { path: "/step2", name: "Step2", Component: Step2 },
 ];
 
 const AppRouter: React.FC = () => {

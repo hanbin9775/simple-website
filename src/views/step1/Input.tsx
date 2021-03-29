@@ -22,17 +22,16 @@ const Step1 = (): JSX.Element => {
     }
   };
 
-  useEffect(() => {
-    if (name && age) {
-      setFullfilled(true);
-    } else {
-      setFullfilled(false);
-    }
-  }, [name, age]);
+  useEffect(() => (name && age ? setFullfilled(true) : setFullfilled(false)), [
+    name,
+    age,
+  ]);
 
   return (
     <s.InputContainer>
       <DraggableModal
+        title="STEP #1"
+        description="당신에 대해 알려주세요"
         input1="이름"
         value1={name}
         input2="나이"
