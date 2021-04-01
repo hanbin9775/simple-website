@@ -18,9 +18,23 @@ const DraggableModal = ({
   value2,
   onChangeInput2,
   paragraph,
-}: // setFullfilled,
-ModalProp): JSX.Element => {
-  // useEffect(() => {}, []);
+  setFullfilled,
+}: ModalProp): JSX.Element => {
+  const onStop = () => {
+    const reactDraggable = document.querySelector(".react-draggable");
+    if (reactDraggable) {
+      const matrix = window.getComputedStyle(reactDraggable, null).transform;
+      const parsedMatrix = matrix.substr(7, matrix.length - 8);
+      const currentY = parseInt(parsedMatrix.split(",")[5].trim(), 10);
+      if (setFullfilled) {
+        if (currentY === 445) {
+          setFullfilled(true);
+        } else {
+          setFullfilled(false);
+        }
+      }
+    }
+  };
 
   return (
     <Draggable
@@ -31,6 +45,7 @@ ModalProp): JSX.Element => {
         top: topBound,
         bottom: bottomBound,
       }}
+      onStop={onStop}
     >
       <s.ModalContainer>
         <s.HandleWrapper>
