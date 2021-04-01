@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Draggable from "react-draggable";
 import { ModalProp } from "type";
 import TextInput from "./content/TextInput";
