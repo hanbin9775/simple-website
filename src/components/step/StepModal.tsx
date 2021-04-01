@@ -2,7 +2,11 @@ import React from "react";
 import { StepProp } from "type";
 import * as s from "./StepModal.styled";
 
-const StepModal = ({ moveTo, isFullfilled }: StepProp): JSX.Element => {
+const StepModal = ({
+  moveTo,
+  isFullfilled,
+  buttonText,
+}: StepProp): JSX.Element => {
   return (
     <s.ModalContainer>
       <s.ContentWrapper>
@@ -13,7 +17,7 @@ const StepModal = ({ moveTo, isFullfilled }: StepProp): JSX.Element => {
             }}
             isFullfilled={isFullfilled}
           >
-            {isFullfilled ? "다음으로" : "알려줄게요!"}
+            {isFullfilled ? "다음으로" : buttonText}
           </s.StepButtpn>
         </s.ButtonWrapper>
       </s.ContentWrapper>

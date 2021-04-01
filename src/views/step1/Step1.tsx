@@ -4,7 +4,7 @@
 import React, { useState, useEffect } from "react";
 import DraggableModal from "components/draggable";
 import StepModal from "components/step";
-import * as s from "./Input.styled";
+import * as s from "./Step1.styled";
 
 const Step1 = (): JSX.Element => {
   const [name, setName] = useState<string>("");
@@ -30,6 +30,8 @@ const Step1 = (): JSX.Element => {
   return (
     <s.InputContainer>
       <DraggableModal
+        topBound={window.innerHeight - 480}
+        bottomBound={window.innerHeight - 280}
         step={1}
         title="STEP #1"
         description="당신에 대해 알려주세요"
@@ -40,7 +42,11 @@ const Step1 = (): JSX.Element => {
         onChangeInput1={onChangeName}
         onChangeInput2={onChangeAge}
       />
-      <StepModal isFullfilled={isFullfilled} moveTo="./step2" />
+      <StepModal
+        isFullfilled={isFullfilled}
+        moveTo="./step2"
+        buttonText="알려줄게요!"
+      />
     </s.InputContainer>
   );
 };

@@ -1,25 +1,36 @@
 export interface ModalProp {
+  topBound: number;
+  bottomBound: number;
   step: number;
   title: string;
   description: string;
-  input1: string;
-  value1: string | undefined;
-  input2: string;
-  value2: number | undefined;
-  onChangeInput1: (ev: React.ChangeEvent<HTMLInputElement>) => void;
-  onChangeInput2: (ev: React.ChangeEvent<HTMLInputElement>) => void;
+  // Step1
+  input1?: string;
+  value1?: string;
+  input2?: string;
+  value2?: number;
+  onChangeInput1?: (ev: React.ChangeEvent<HTMLInputElement>) => void;
+  onChangeInput2?: (ev: React.ChangeEvent<HTMLInputElement>) => void;
+  // Step2
+  paragraph?: string;
+  setFullfilled?: (isFullfilled: boolean) => void;
 }
 
 export interface ModalTextInputProp {
-  input1: string;
-  value1: string | undefined;
-  input2: string;
-  value2: number | undefined;
-  onChangeInput1: (ev: React.ChangeEvent<HTMLInputElement>) => void;
-  onChangeInput2: (ev: React.ChangeEvent<HTMLInputElement>) => void;
+  input1?: string;
+  value1?: string;
+  input2?: string;
+  value2?: number;
+  onChangeInput1?: (ev: React.ChangeEvent<HTMLInputElement>) => void;
+  onChangeInput2?: (ev: React.ChangeEvent<HTMLInputElement>) => void;
+}
+
+export interface ModalParagraphProp {
+  content?: string;
 }
 
 export interface StepProp {
   moveTo: string;
   isFullfilled: boolean;
+  buttonText: string;
 }

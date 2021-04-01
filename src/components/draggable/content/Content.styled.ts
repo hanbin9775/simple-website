@@ -18,3 +18,10 @@ export const InputBox = styled.input`
   width: 88%;
   border: 1px solid #c4c4c4;
 `;
+
+export const ParagraphWrapper = styled.div`
+  background-color: #dbdbdb;
+  border-radius: 8px;
+  font-size: 16px;
+  padding: 12px 16px;
+`;
