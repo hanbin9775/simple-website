@@ -40,7 +40,7 @@ const DraggableModal = ({
     <Draggable
       cancel=".not-draggable"
       axis="y"
-      defaultPosition={{ x: 0, y: window.innerHeight - 280 }}
+      defaultPosition={{ x: 0, y: bottomBound }}
       bounds={{
         top: topBound,
         bottom: bottomBound,
