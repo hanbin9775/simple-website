@@ -27,7 +27,7 @@ const DraggableModal = ({
       const parsedMatrix = matrix.substr(7, matrix.length - 8);
       const currentY = parseInt(parsedMatrix.split(",")[5].trim(), 10);
       if (setFullfilled) {
-        if (currentY === 445) {
+        if (currentY === topBound) {
           setFullfilled(true);
         } else {
           setFullfilled(false);

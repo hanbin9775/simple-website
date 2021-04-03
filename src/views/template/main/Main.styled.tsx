@@ -11,11 +11,6 @@ export const Container = styled.section`
 export const Gradient = styled.div`
   height: 100%;
   padding: 0 30px;
-  background: linear-gradient(
-    0deg,
-    rgba(0, 0, 0, 0.66) 0%,
-    rgba(0, 0, 0, 0) 100%
-  );
 `;
 
 export const ContentWrapper = styled.div`
@@ -49,8 +44,9 @@ export const ButtonWrapper = styled.div`
 export const Button = styled(Link)`
   width: 100%;
   text-align: center;
-  padding: 8px 0;
+  padding: 12px 0;
   background-color: #e8e8ed;
   border-radius: 8px;
   text-decoration: none;
+  font-weight: 600;
 `;
