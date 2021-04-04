@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export const ModalContainer = styled.section`
   position: absolute;
   z-index: 999;
-  bottom: 0;
+  top: ${window.innerHeight - 154}px;
   width: 468px;
   height: 154px;
   background-color: #e8e8ed;
