@@ -11,7 +11,7 @@ const Main = ({ buttonText, moveTo }: MainProp): JSX.Element => {
     <s.Container>
       <s.Gradient>
         <s.ContentWrapper>
-          <video loop autoPlay width={300}>
+          <video loop autoPlay playsInline width={300}>
             <source src={MainVideo} type="video/mp4" />
             <track
               src="captions_en.vtt"
