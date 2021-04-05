@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Draggable from "react-draggable";
 import { ModalProp } from "type";
 import TextInput from "./content/TextInput";
@@ -20,18 +20,50 @@ const DraggableModal = ({
   paragraph,
   setFullfilled,
 }: ModalProp): JSX.Element => {
+  const [ypos, setYpos] = useState<number>(bottomBound);
+
+  const getCurrentY = (element: Element) => {
+    let currentY = 0;
+    if (element) {
+      const matrix = window.getComputedStyle(element, null).transform;
+      const parsedMatrix = matrix.substr(7, matrix.length - 8);
+      currentY = parseInt(parsedMatrix.split(",")[5].trim(), 10);
+    }
+    return currentY;
+  };
+
   const onStop = () => {
     const reactDraggable = document.querySelector(".react-draggable");
+
     if (reactDraggable) {
-      const matrix = window.getComputedStyle(reactDraggable, null).transform;
-      const parsedMatrix = matrix.substr(7, matrix.length - 8);
-      const currentY = parseInt(parsedMatrix.split(",")[5].trim(), 10);
       if (setFullfilled) {
-        if (currentY === topBound) {
+        if (getCurrentY(reactDraggable) === topBound) {
           setFullfilled(true);
         } else {
           setFullfilled(false);
         }
+      }
+    }
+  };
+
+  const onDrag = () => {
+    const reactDraggable = document.querySelector(".react-draggable");
+    if (reactDraggable) {
+      if (getCurrentY(reactDraggable) > 441) {
+        setYpos(541);
+      } else {
+        setYpos(341);
+      }
+    }
+  };
+
+  const onClickHandle = () => {
+    const reactDraggable = document.querySelector(".react-draggable");
+    if (reactDraggable) {
+      if (getCurrentY(reactDraggable) < 441) {
+        setYpos(541);
+      } else {
+        setYpos(341);
       }
     }
   };
@@ -46,10 +78,12 @@ const DraggableModal = ({
         bottom: bottomBound,
       }}
       onStop={onStop}
+      position={{ x: 0, y: ypos }}
+      onDrag={onDrag}
     >
       <s.ModalContainer>
         <s.HandleWrapper>
-          <s.Handle />
+          <s.Handle onClick={onClickHandle} />
         </s.HandleWrapper>
         <s.ContentWrapper>
           <s.Title>{title}</s.Title>
