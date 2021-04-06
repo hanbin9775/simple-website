@@ -32,10 +32,14 @@ const DraggableModal = ({
     return currentY;
   };
 
-  const onStop = () => {
+  const onDrag = () => {
     const reactDraggable = document.querySelector(".react-draggable");
-
     if (reactDraggable) {
+      if (getCurrentY(reactDraggable) > (topBound + bottomBound) / 2) {
+        setYpos(bottomBound);
+      } else {
+        setYpos(topBound);
+      }
       if (setFullfilled) {
         if (getCurrentY(reactDraggable) === topBound) {
           setFullfilled(true);
@@ -46,24 +50,20 @@ const DraggableModal = ({
     }
   };
 
-  const onDrag = () => {
-    const reactDraggable = document.querySelector(".react-draggable");
-    if (reactDraggable) {
-      if (getCurrentY(reactDraggable) > 441) {
-        setYpos(541);
-      } else {
-        setYpos(341);
-      }
-    }
-  };
-
   const onClickHandle = () => {
     const reactDraggable = document.querySelector(".react-draggable");
     if (reactDraggable) {
-      if (getCurrentY(reactDraggable) < 441) {
-        setYpos(541);
+      if (getCurrentY(reactDraggable) < (topBound + bottomBound) / 2) {
+        setYpos(bottomBound);
       } else {
-        setYpos(341);
+        setYpos(topBound);
+      }
+      if (setFullfilled) {
+        if (getCurrentY(reactDraggable) > (topBound + bottomBound) / 2) {
+          setFullfilled(true);
+        } else {
+          setFullfilled(false);
+        }
       }
     }
   };
@@ -77,7 +77,6 @@ const DraggableModal = ({
         top: topBound,
         bottom: bottomBound,
       }}
-      onStop={onStop}
       position={{ x: 0, y: ypos }}
       onDrag={onDrag}
     >
