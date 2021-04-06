@@ -3,9 +3,9 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const ModalContainer = styled.section`
-  position: absolute;
+  position: fixed;
   z-index: 999;
-  top: ${window.innerHeight - 154}px;
+  bottom: 0;
   width: 468px;
   height: 154px;
   background-color: #e8e8ed;
