@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Draggable from "react-draggable";
 import { ModalProp } from "type";
 import TextInput from "./content/TextInput";
@@ -40,33 +40,18 @@ const DraggableModal = ({
       } else {
         setYpos(topBound);
       }
-      if (setFullfilled) {
-        if (getCurrentY(reactDraggable) === topBound) {
-          setFullfilled(true);
-        } else {
-          setFullfilled(false);
-        }
-      }
     }
   };
 
-  const onClickHandle = () => {
-    const reactDraggable = document.querySelector(".react-draggable");
-    if (reactDraggable) {
-      if (getCurrentY(reactDraggable) < (topBound + bottomBound) / 2) {
-        setYpos(bottomBound);
+  useEffect(() => {
+    if (setFullfilled) {
+      if (ypos === topBound) {
+        setFullfilled(true);
       } else {
-        setYpos(topBound);
-      }
-      if (setFullfilled) {
-        if (getCurrentY(reactDraggable) > (topBound + bottomBound) / 2) {
-          setFullfilled(true);
-        } else {
-          setFullfilled(false);
-        }
+        setFullfilled(false);
       }
     }
-  };
+  });
 
   return (
     <Draggable
@@ -82,7 +67,7 @@ const DraggableModal = ({
     >
       <s.ModalContainer>
         <s.HandleWrapper>
-          <s.Handle onClick={onClickHandle} />
+          <s.Handle />
         </s.HandleWrapper>
         <s.ContentWrapper>
           <s.Title>{title}</s.Title>
