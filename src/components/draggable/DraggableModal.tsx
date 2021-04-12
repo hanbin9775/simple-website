@@ -83,6 +83,7 @@ const DraggableModal = ({
             />
           )}
           {step === 2 && <Paragraph content={paragraph} />}
+          {step === 3 && <Paragraph content={paragraph} />}
         </s.ContentWrapper>
       </s.ModalContainer>
     </Draggable>
