@@ -28,6 +28,7 @@ const TextInput = ({
           placeholder={input2}
           onChange={onChangeInput2}
           value={value2}
+          type="number"
         />
       </s.InputWrapper>
     </>
