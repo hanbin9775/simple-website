@@ -10,6 +10,9 @@ const Step1 = (): JSX.Element => {
   const [name, setName] = useState<string>("");
   const [age, setAge] = useState<number>();
   const [isFullfilled, setFullfilled] = useState<boolean>(false);
+  const [viewportHeight, setViewportHeight] = useState<number>(
+    window.innerHeight
+  );
 
   const onChangeName = (ev: React.ChangeEvent<HTMLInputElement>) => {
     setName(ev.target.value);
@@ -27,11 +30,15 @@ const Step1 = (): JSX.Element => {
     age,
   ]);
 
+  useEffect(() => {
+    setViewportHeight(window.innerHeight);
+  }, []);
+
   return (
     <s.InputContainer>
       <DraggableModal
-        topBound={window.innerHeight - 480}
-        bottomBound={window.innerHeight - 280}
+        topBound={viewportHeight - 480}
+        bottomBound={viewportHeight - 280}
         step={1}
         title="STEP #1"
         description="당신에 대해 알려주세요"
