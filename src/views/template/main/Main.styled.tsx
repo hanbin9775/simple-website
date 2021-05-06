@@ -20,6 +20,13 @@ export const ContentWrapper = styled.div`
   justify-content: space-between;
 `;
 
+export const VideoWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px;
+`;
+
 export const Title = styled.h1`
   font-family: "Irish Grover", cursive;
   font-size: 72px;

@@ -11,15 +11,17 @@ const Main = ({ buttonText, moveTo }: MainProp): JSX.Element => {
     <s.Container>
       <s.Gradient>
         <s.ContentWrapper>
-          <video loop autoPlay playsInline width={300}>
-            <source src={MainVideo} type="video/mp4" />
-            <track
-              src="captions_en.vtt"
-              kind="captions"
-              srcLang="en"
-              label="english_captions"
-            />
-          </video>
+          <s.VideoWrapper>
+            <video loop autoPlay playsInline width={300}>
+              <source src={MainVideo} type="video/mp4" />
+              <track
+                src="captions_en.vtt"
+                kind="captions"
+                srcLang="en"
+                label="english_captions"
+              />
+            </video>
+          </s.VideoWrapper>
           <div>
             <s.ButtonWrapper>
               <s.Button
