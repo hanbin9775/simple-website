@@ -24,7 +24,7 @@ export const VideoWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 100px;
+  padding: 10%;
 `;
 
 export const Title = styled.h1`
