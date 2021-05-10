@@ -12,13 +12,9 @@ export const Container = styled.section`
   }
 `;
 
-export const Gradient = styled.div`
-  height: 100%;
-  padding: 40px 20px;
-`;
-
 export const ContentWrapper = styled.div`
-  height: 90%;
+  height: calc(100vh - 80px);
+  padding: 40px 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

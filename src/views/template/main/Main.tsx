@@ -10,44 +10,42 @@ import { MainProp } from "./type";
 const Main = ({ description, buttonText, moveTo }: MainProp): JSX.Element => {
   return (
     <s.Container>
-      <s.Gradient>
-        <s.ContentWrapper>
-          <s.SourceWrapper>
-            <video
-              loop
-              autoPlay
-              playsInline
-              width={window.innerWidth < 468 ? window.innerWidth - 40 : 428}
-            >
-              <source src={MainVideo} type="video/mp4" />
-              <track
-                src="captions_en.vtt"
-                kind="captions"
-                srcLang="en"
-                label="english_captions"
-              />
-            </video>
-            <img
-              src={MainTitleImage}
-              alt="title_img"
-              width={window.innerWidth < 468 ? window.innerWidth / 2 : 300}
+      <s.ContentWrapper>
+        <s.SourceWrapper>
+          <video
+            loop
+            autoPlay
+            playsInline
+            width={window.innerWidth < 468 ? window.innerWidth - 40 : 428}
+          >
+            <source src={MainVideo} type="video/mp4" />
+            <track
+              src="captions_en.vtt"
+              kind="captions"
+              srcLang="en"
+              label="english_captions"
             />
-            <s.SubTitle>{description}</s.SubTitle>
-          </s.SourceWrapper>
+          </video>
+          <img
+            src={MainTitleImage}
+            alt="title_img"
+            width={window.innerWidth < 468 ? window.innerWidth / 2 : 300}
+          />
+          <s.SubTitle>{description}</s.SubTitle>
+        </s.SourceWrapper>
 
-          <div>
-            <s.ButtonWrapper>
-              <s.Button
-                to={{
-                  pathname: moveTo,
-                }}
-              >
-                {buttonText}
-              </s.Button>
-            </s.ButtonWrapper>
-          </div>
-        </s.ContentWrapper>
-      </s.Gradient>
+        <div>
+          <s.ButtonWrapper>
+            <s.Button
+              to={{
+                pathname: moveTo,
+              }}
+            >
+              {buttonText}
+            </s.Button>
+          </s.ButtonWrapper>
+        </div>
+      </s.ContentWrapper>
     </s.Container>
   );
 };
