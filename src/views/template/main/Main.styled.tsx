@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export const Container = styled.section`
   background-color: #5500ff;
-  height: 100vh;
+  height: ${window.innerHeight}px;
   width: 468px;
 
   @media only screen and (max-width: 468px) {
@@ -13,7 +13,7 @@ export const Container = styled.section`
 `;
 
 export const ContentWrapper = styled.div`
-  height: calc(100vh - 80px);
+  height: ${window.innerHeight - 80}px;
   padding: 40px 20px;
   display: flex;
   flex-direction: column;
