@@ -3,16 +3,22 @@
  */
 import React from "react";
 import MainVideo from "assets/video/main.mp4";
+import MainTitleImage from "assets/image/title_kor.png";
 import * as s from "./Main.styled";
 import { MainProp } from "./type";
 
-const Main = ({ buttonText, moveTo }: MainProp): JSX.Element => {
+const Main = ({ description, buttonText, moveTo }: MainProp): JSX.Element => {
   return (
     <s.Container>
       <s.Gradient>
         <s.ContentWrapper>
-          <s.VideoWrapper>
-            <video loop autoPlay playsInline width={300}>
+          <s.SourceWrapper>
+            <video
+              loop
+              autoPlay
+              playsInline
+              width={window.innerWidth < 468 ? window.innerWidth - 40 : 428}
+            >
               <source src={MainVideo} type="video/mp4" />
               <track
                 src="captions_en.vtt"
@@ -21,7 +27,14 @@ const Main = ({ buttonText, moveTo }: MainProp): JSX.Element => {
                 label="english_captions"
               />
             </video>
-          </s.VideoWrapper>
+            <img
+              src={MainTitleImage}
+              alt="title_img"
+              width={window.innerWidth < 468 ? window.innerWidth / 2 : 300}
+            />
+            <s.SubTitle>{description}</s.SubTitle>
+          </s.SourceWrapper>
+
           <div>
             <s.ButtonWrapper>
               <s.Button

@@ -4,13 +4,17 @@ import { Link } from "react-router-dom";
 
 export const Container = styled.section`
   background-color: #5500ff;
+  height: 100vh;
   width: 468px;
-  height: 100%;
+
+  @media only screen and (max-width: 468px) {
+    width: 100%;
+  }
 `;
 
 export const Gradient = styled.div`
   height: 100%;
-  padding: 0 30px;
+  padding: 40px 20px;
 `;
 
 export const ContentWrapper = styled.div`
@@ -20,11 +24,18 @@ export const ContentWrapper = styled.div`
   justify-content: space-between;
 `;
 
-export const VideoWrapper = styled.div`
+export const SourceWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  padding: 10%;
+  gap: 2em;
+`;
+
+export const SubTitle = styled.span`
+  font-size: 16px;
+  color: #fff;
+  font-weight: 500;
 `;
 
 export const Title = styled.h1`
