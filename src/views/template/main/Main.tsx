@@ -14,9 +14,10 @@ const Main = ({ description, buttonText, moveTo }: MainProp): JSX.Element => {
         <s.SourceWrapper>
           <video
             loop
+            muted
             autoPlay
             playsInline
-            width={window.innerWidth < 468 ? window.innerWidth - 40 : 428}
+            width={window.innerWidth < 468 ? window.innerWidth - 120 : 428}
           >
             <source src={MainVideo} type="video/mp4" />
             <track
