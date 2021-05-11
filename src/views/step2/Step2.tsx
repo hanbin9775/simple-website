@@ -1,7 +1,7 @@
 /**
  * @description home 화면
  */
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import DraggableModal from "components/draggable";
 import StepModal from "components/step";
 import BackGroundVideo from "components/bg_video/BackGroundVideo";
@@ -10,6 +10,13 @@ import * as s from "./Step2.styled";
 
 const Step2 = (): JSX.Element => {
   const [isFullfilled, setFullfilled] = useState<boolean>(false);
+  const [viewportHeight, setViewportHeight] = useState<number>(
+    window.innerHeight
+  );
+
+  useEffect(() => {
+    setViewportHeight(window.innerHeight);
+  }, []);
 
   return (
     <s.InputContainer>
@@ -18,8 +25,8 @@ const Step2 = (): JSX.Element => {
         src={Step2VideoSrc}
       />
       <DraggableModal
-        topBound={window.innerHeight - 376}
-        bottomBound={window.innerHeight - 280}
+        topBound={viewportHeight - 376}
+        bottomBound={viewportHeight - 280}
         step={2}
         title="STEP #2"
         description="눈을 감고 인생을 돌아보세요"
