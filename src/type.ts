@@ -34,3 +34,8 @@ export interface StepProp {
   isFullfilled: boolean;
   buttonText: string;
 }
+
+export interface BackGroundVideoProp {
+  width: number;
+  src: string;
+}
