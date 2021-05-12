@@ -88,10 +88,57 @@ const DraggableModal = ({
             <>
               <Paragraph content={paragraph} />
               <s.SliderWrapper>
+                <s.SliderGraphCanvas
+                  width={window.innerWidth > 468 ? 428 : window.innerWidth - 40}
+                  height="200"
+                />
                 <Slider
+                  track={false}
                   className="not-draggable"
                   orientation="vertical"
-                  defaultValue={30}
+                  defaultValue={50}
+                  aria-labelledby="vertical-slider"
+                />
+                <Slider
+                  track={false}
+                  className="not-draggable"
+                  orientation="vertical"
+                  defaultValue={50}
+                  aria-labelledby="vertical-slider"
+                />
+                <Slider
+                  track={false}
+                  className="not-draggable"
+                  orientation="vertical"
+                  defaultValue={50}
+                  aria-labelledby="vertical-slider"
+                />
+                <Slider
+                  track={false}
+                  className="not-draggable"
+                  orientation="vertical"
+                  defaultValue={50}
+                  aria-labelledby="vertical-slider"
+                />
+                <Slider
+                  track={false}
+                  className="not-draggable"
+                  orientation="vertical"
+                  defaultValue={50}
+                  aria-labelledby="vertical-slider"
+                />
+                <Slider
+                  track={false}
+                  className="not-draggable"
+                  orientation="vertical"
+                  defaultValue={50}
+                  aria-labelledby="vertical-slider"
+                />
+                <Slider
+                  track={false}
+                  className="not-draggable"
+                  orientation="vertical"
+                  defaultValue={50}
                   aria-labelledby="vertical-slider"
                 />
               </s.SliderWrapper>
