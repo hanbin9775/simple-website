@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Draggable from "react-draggable";
 import { ModalProp } from "type";
+import Slider from "@material-ui/core/Slider";
 import TextInput from "./content/TextInput";
 import Paragraph from "./content/Paragraph";
 import * as s from "./DraggableModal.styled";
@@ -51,9 +52,6 @@ const DraggableModal = ({
         setFullfilled(false);
       }
     }
-    console.log("1");
-    console.log("2");
-    return () => console.log("3");
   });
 
   return (
@@ -86,6 +84,19 @@ const DraggableModal = ({
             />
           )}
           {step === 2 && <Paragraph content={paragraph} />}
+          {step === 3 && (
+            <>
+              <Paragraph content={paragraph} />
+              <s.SliderWrapper>
+                <Slider
+                  className="not-draggable"
+                  orientation="vertical"
+                  defaultValue={30}
+                  aria-labelledby="vertical-slider"
+                />
+              </s.SliderWrapper>
+            </>
+          )}
         </s.ContentWrapper>
       </s.ModalContainer>
     </Draggable>

@@ -6,6 +6,7 @@ import DraggableModal from "components/draggable";
 import StepModal from "components/step";
 import BackGroundVideo from "components/bg_video/BackGroundVideo";
 import Step3VideoSrc from "assets/video/step3.mp4";
+
 import * as s from "./Step3.styled";
 
 const Step3 = (): JSX.Element => {
@@ -25,9 +26,9 @@ const Step3 = (): JSX.Element => {
         src={Step3VideoSrc}
       />
       <DraggableModal
-        topBound={viewportHeight - 364 + 10}
+        topBound={viewportHeight - 600}
         bottomBound={viewportHeight - 280}
-        step={2}
+        step={3}
         title="STEP #3"
         description="인생 그래프를 그려보세요"
         paragraph="한빈님의 최근 7년의 인생굴곡을 위아래로 움직여 표현하세요"

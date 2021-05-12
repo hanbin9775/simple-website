@@ -51,3 +51,8 @@ export const InputBox = styled.input`
   width: 88%;
   border: 1px solid #c4c4c4;
 `;
+
+export const SliderWrapper = styled.div`
+  margin-top: 10%;
+  height: 200px;
+`;
