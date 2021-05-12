@@ -51,6 +51,9 @@ const DraggableModal = ({
         setFullfilled(false);
       }
     }
+    console.log("1");
+    console.log("2");
+    return () => console.log("3");
   });
 
   return (
