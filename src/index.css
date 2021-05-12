@@ -25,6 +25,10 @@ h1 {
   margin: 0;
 }
 
-.react-draggable {
+.react-draggable-dragged {
   transition: 0.1s;
+}
+
+.react-draggable-dragging {
+  transition: 0s !important;
 }
