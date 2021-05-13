@@ -51,15 +51,3 @@ export const InputBox = styled.input`
   width: 88%;
   border: 1px solid #c4c4c4;
 `;
-
-export const SliderGraphCanvas = styled.canvas`
-  background-color: #e8e8ed;
-  position: fixed;
-`;
-
-export const SliderWrapper = styled.div`
-  margin-top: 10%;
-  display: flex;
-  justify-content: space-between;
-  height: 200px;
-`;

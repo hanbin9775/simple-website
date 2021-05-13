@@ -25,3 +25,15 @@ export const ParagraphWrapper = styled.div`
   font-size: 16px;
   padding: 12px 16px;
 `;
+
+export const SliderWrapper = styled.div`
+  margin-top: 10%;
+  display: flex;
+  justify-content: space-between;
+  height: 200px;
+`;
+
+export const SliderGraphCanvas = styled.svg`
+  background-color: #e8e8ed;
+  position: fixed;
+`;

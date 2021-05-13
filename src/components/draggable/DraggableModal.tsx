@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Draggable from "react-draggable";
 import { ModalProp } from "type";
-import Slider from "@material-ui/core/Slider";
+
 import TextInput from "./content/TextInput";
 import Paragraph from "./content/Paragraph";
+import LineGraph from "./content/LineGraph";
 import * as s from "./DraggableModal.styled";
 
 const DraggableModal = ({
@@ -87,61 +88,7 @@ const DraggableModal = ({
           {step === 3 && (
             <>
               <Paragraph content={paragraph} />
-              <s.SliderWrapper>
-                <s.SliderGraphCanvas
-                  width={window.innerWidth > 468 ? 428 : window.innerWidth - 40}
-                  height="200"
-                />
-                <Slider
-                  track={false}
-                  className="not-draggable"
-                  orientation="vertical"
-                  defaultValue={50}
-                  aria-labelledby="vertical-slider"
-                />
-                <Slider
-                  track={false}
-                  className="not-draggable"
-                  orientation="vertical"
-                  defaultValue={50}
-                  aria-labelledby="vertical-slider"
-                />
-                <Slider
-                  track={false}
-                  className="not-draggable"
-                  orientation="vertical"
-                  defaultValue={50}
-                  aria-labelledby="vertical-slider"
-                />
-                <Slider
-                  track={false}
-                  className="not-draggable"
-                  orientation="vertical"
-                  defaultValue={50}
-                  aria-labelledby="vertical-slider"
-                />
-                <Slider
-                  track={false}
-                  className="not-draggable"
-                  orientation="vertical"
-                  defaultValue={50}
-                  aria-labelledby="vertical-slider"
-                />
-                <Slider
-                  track={false}
-                  className="not-draggable"
-                  orientation="vertical"
-                  defaultValue={50}
-                  aria-labelledby="vertical-slider"
-                />
-                <Slider
-                  track={false}
-                  className="not-draggable"
-                  orientation="vertical"
-                  defaultValue={50}
-                  aria-labelledby="vertical-slider"
-                />
-              </s.SliderWrapper>
+              <LineGraph />
             </>
           )}
         </s.ContentWrapper>
