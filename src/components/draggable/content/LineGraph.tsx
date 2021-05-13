@@ -33,11 +33,13 @@ const LineGraph = (): JSX.Element => {
         if (index === 0) {
           return `M${21} ${200 - value * 2}`;
         }
-        return `L${21 + index * 48.9} ${200 - value * 2}`;
+        return `L${21 + (index * (window.innerWidth - 82)) / 6} ${
+          200 - value * 2
+        }`;
       })
       .join("");
     setPathInfo(newPathInfo);
-    newPathInfo += "L314.4 200 L21 200";
+    newPathInfo += `L${21 + window.innerWidth - 82} 200 L21 200`;
     setFillInfo(newPathInfo);
   }, [thumbValues]);
 
