@@ -1,6 +1,27 @@
 import React, { useState, useEffect } from "react";
 import Slider from "@material-ui/core/Slider";
+import { makeStyles } from "@material-ui/core/styles";
 import * as s from "./Content.styled";
+
+const useStyles = makeStyles({
+  root: {
+    color: "#4400AA",
+    padding: "0 18px !important",
+  },
+  thumb: {
+    width: "10px",
+    height: "10px",
+    marginLeft: "-4px",
+    marginBottom: "-5px",
+  },
+  active: {
+    transform: "scale(1.5,1.5)",
+  },
+  rail: {
+    backgroundColor: "#DBDBDB",
+    width: "1px",
+  },
+});
 
 const LineGraph = (): JSX.Element => {
   const [thumbValues, setThumbValues] = useState<number[]>([
@@ -14,16 +35,19 @@ const LineGraph = (): JSX.Element => {
   ]);
   const [pathInfo, setPathInfo] = useState<string>("");
   const [fillInfo, setFillInfo] = useState<string>("");
+  const classes = useStyles();
 
   const handleChange = (
     event: React.ChangeEvent<Record<string, unknown>>,
     newValue: number | number[],
     index: number
   ) => {
+    // console.log(index);
     const tempValues = [...thumbValues];
     if (typeof newValue === "number") {
       tempValues[index] = newValue;
     }
+    // console.log(tempValues);
     setThumbValues(tempValues);
   };
 
@@ -31,9 +55,9 @@ const LineGraph = (): JSX.Element => {
     let newPathInfo = thumbValues
       .map((value, index) => {
         if (index === 0) {
-          return `M${21} ${200 - value * 2}`;
+          return `M${18} ${200 - value * 2}`;
         }
-        return `L${21 + (index * (window.innerWidth - 82)) / 6} ${
+        return `L${18 + (index * (window.innerWidth - 76)) / 6} ${
           200 - value * 2
         }`;
       })
@@ -53,20 +77,26 @@ const LineGraph = (): JSX.Element => {
           <linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%">
             <stop
               offset="0%"
-              style={{ stopColor: "rgba(85, 0, 255, 0.44)", stopOpacity: 1 }}
+              style={{ stopColor: "rgba(85, 0, 255, 0.2)", stopOpacity: 1 }}
             />
             <stop
               offset="100%"
-              style={{ stopColor: "rgb(255,255,255)", stopOpacity: 1 }}
+              style={{ stopColor: "rgba(85, 0, 255, 0)", stopOpacity: 1 }}
             />
           </linearGradient>
         </defs>
-        <path d={pathInfo} stroke="#5500FF" strokeWidth="3" fill="none" />
+        <path d={pathInfo} stroke="#4400AA" strokeWidth="3" fill="none" />
         <path d={fillInfo} stroke="none" fill="url(#grad1)" />
       </s.SliderGraphCanvas>
       {thumbValues.map((value, index) => (
         <Slider
           track={false}
+          classes={{
+            root: classes.root,
+            thumb: classes.thumb,
+            active: classes.active,
+            rail: classes.rail,
+          }}
           className="not-draggable"
           orientation="vertical"
           value={value}
