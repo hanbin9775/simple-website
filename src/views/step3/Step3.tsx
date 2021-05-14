@@ -26,7 +26,7 @@ const Step3 = (): JSX.Element => {
         src={Step3VideoSrc}
       />
       <DraggableModal
-        topBound={viewportHeight - 599}
+        topBound={viewportHeight - 629}
         bottomBound={viewportHeight - 280}
         step={3}
         title="STEP #3"

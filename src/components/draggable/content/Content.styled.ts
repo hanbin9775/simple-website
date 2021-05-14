@@ -27,13 +27,27 @@ export const ParagraphWrapper = styled.div`
 `;
 
 export const SliderWrapper = styled.div`
-  margin-top: 10%;
+  margin-top: 5%;
   display: flex;
   justify-content: space-between;
   height: 200px;
+`;
+
+export const SliderUnit = styled.div`
+  margin-top: 5%;
+  text-align: right;
+  font-size: 14px;
 `;
 
 export const SliderGraphCanvas = styled.svg`
   background-color: #e8e8ed;
   position: fixed;
 `;
+
+export const SliderLabelWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 10px 0 10px;
+`;
+
+export const SliderLabel = styled.div``;

@@ -68,46 +68,53 @@ const LineGraph = (): JSX.Element => {
   }, [thumbValues]);
 
   return (
-    <s.SliderWrapper>
-      <s.SliderGraphCanvas
-        width={window.innerWidth > 468 ? 428 : window.innerWidth - 40}
-        height="200"
-      >
-        <defs>
-          <linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop
-              offset="0%"
-              style={{ stopColor: "rgba(85, 0, 255, 0.2)", stopOpacity: 1 }}
-            />
-            <stop
-              offset="100%"
-              style={{ stopColor: "rgba(85, 0, 255, 0)", stopOpacity: 1 }}
-            />
-          </linearGradient>
-        </defs>
-        <path d={pathInfo} stroke="#4400AA" strokeWidth="3" fill="none" />
-        <path d={fillInfo} stroke="none" fill="url(#grad1)" />
-      </s.SliderGraphCanvas>
-      {thumbValues.map((value, index) => (
-        <Slider
-          track={false}
-          classes={{
-            root: classes.root,
-            thumb: classes.thumb,
-            active: classes.active,
-            rail: classes.rail,
-          }}
-          className="not-draggable"
-          orientation="vertical"
-          value={value}
-          onChange={(
-            event: React.ChangeEvent<Record<string, unknown>>,
-            newValue: number | number[]
-          ) => handleChange(event, newValue, index)}
-          aria-labelledby="vertical-slider"
-        />
-      ))}
-    </s.SliderWrapper>
+    <>
+      <s.SliderUnit> 단위/나이 </s.SliderUnit>
+      <s.SliderWrapper>
+        <s.SliderGraphCanvas
+          width={window.innerWidth > 468 ? 428 : window.innerWidth - 40}
+          height="200"
+        >
+          <defs>
+            <linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop
+                offset="0%"
+                style={{ stopColor: "rgba(85, 0, 255, 0.2)", stopOpacity: 1 }}
+              />
+              <stop
+                offset="100%"
+                style={{ stopColor: "rgba(85, 0, 255, 0)", stopOpacity: 1 }}
+              />
+            </linearGradient>
+          </defs>
+          <path d={pathInfo} stroke="#4400AA" strokeWidth="3" fill="none" />
+          <path d={fillInfo} stroke="none" fill="url(#grad1)" />
+        </s.SliderGraphCanvas>
+        {thumbValues.map((value, index) => (
+          <Slider
+            track={false}
+            classes={{
+              root: classes.root,
+              thumb: classes.thumb,
+              active: classes.active,
+              rail: classes.rail,
+            }}
+            className="not-draggable"
+            orientation="vertical"
+            value={value}
+            onChange={(
+              event: React.ChangeEvent<Record<string, unknown>>,
+              newValue: number | number[]
+            ) => handleChange(event, newValue, index)}
+          />
+        ))}
+      </s.SliderWrapper>
+      <s.SliderLabelWrapper>
+        {thumbValues.map((value, index) => (
+          <s.SliderLabel>{index + 21}</s.SliderLabel>
+        ))}
+      </s.SliderLabelWrapper>
+    </>
   );
 };
 
