@@ -34,7 +34,11 @@ const Step3 = (): JSX.Element => {
         paragraph="한빈님의 최근 7년의 인생굴곡을 위아래로 움직여 표현하세요"
         setFullfilled={setFullfilled}
       />
-      <StepModal isFullfilled={isFullfilled} moveTo="/" buttonText="설명보기" />
+      <StepModal
+        isFullfilled={isFullfilled}
+        moveTo="/result"
+        buttonText="설명보기"
+      />
     </s.InputContainer>
   );
 };
