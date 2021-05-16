@@ -15,7 +15,7 @@ const useStyles = makeStyles({
     marginBottom: "-5px",
   },
   active: {
-    transform: "scale(1.5,1.5)",
+    transform: "scale(2,2)",
   },
   rail: {
     backgroundColor: "#DBDBDB",
@@ -99,6 +99,7 @@ const LineGraph = (): JSX.Element => {
               active: classes.active,
               rail: classes.rail,
             }}
+            step={20}
             className="not-draggable"
             orientation="vertical"
             value={value}
