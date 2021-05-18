@@ -39,3 +39,7 @@ export interface BackGroundVideoProp {
   width: number;
   src: string;
 }
+
+export interface BackArrowProp {
+  path: string;
+}

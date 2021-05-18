@@ -39,7 +39,7 @@ const Step1 = (): JSX.Element => {
 
   return (
     <InputContainer>
-      <Back />
+      <Back path="/" />
       <BackGroundVideo
         width={window.innerWidth < 468 ? window.innerWidth / 1.8 : 428}
         src={Step1VideoSrc}
