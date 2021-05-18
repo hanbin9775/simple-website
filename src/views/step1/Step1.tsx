@@ -6,6 +6,7 @@ import DraggableModal from "components/draggable";
 import StepModal from "components/step";
 import BackGroundVideo from "components/bg_video/BackGroundVideo";
 import Step1VideoSrc from "assets/video/step1.mp4";
+import Back from "components/back";
 import InputContainer from "./Step1.styled";
 
 const Step1 = (): JSX.Element => {
@@ -38,6 +39,7 @@ const Step1 = (): JSX.Element => {
 
   return (
     <InputContainer>
+      <Back />
       <BackGroundVideo
         width={window.innerWidth < 468 ? window.innerWidth / 1.8 : 428}
         src={Step1VideoSrc}

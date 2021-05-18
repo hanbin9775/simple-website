@@ -5,7 +5,7 @@ const VideoSection = styled.section`
   position: fixed;
   width: 468px;
   text-align: center;
-  top: 20px;
+  top: 10%;
 
   @media only screen and (max-width: 468px) {
     width: 100%;
