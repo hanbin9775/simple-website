@@ -2,11 +2,11 @@ import React from "react";
 import { BackGroundVideoProp } from "type";
 import * as s from "./Loading.styled";
 
-const Loading = ({ width, src }: BackGroundVideoProp): JSX.Element => {
+const Loading = ({ width, src, poster }: BackGroundVideoProp): JSX.Element => {
   return (
     <>
       <s.LoadingSection>
-        <video loop muted autoPlay playsInline width={width}>
+        <video poster={poster} loop muted autoPlay playsInline width={width}>
           <source src={src} type="video/mp4" />
           <track
             src="captions_en.vtt"
