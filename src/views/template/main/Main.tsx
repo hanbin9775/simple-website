@@ -3,7 +3,7 @@
  */
 import React from "react";
 import MainVideo from "assets/video/main.mp4";
-import MainTitleImage from "assets/image/title_kor.png";
+import MainTitleImage from "assets/image/title_image.png";
 import * as s from "./Main.styled";
 import { MainProp } from "./type";
 

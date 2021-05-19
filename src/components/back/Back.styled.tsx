@@ -20,7 +20,7 @@ export const Touchable = styled(Link)`
   align-items: center;
   text-decoration: none;
   z-index: 1000;
-  margin-left: 2%;
+  margin-left: 20px;
 `;
 
 export const BackText = styled.div`

@@ -3,16 +3,17 @@
  */
 import React from "react";
 import Loading from "components/loading/Loading";
-import Step3VideoSrc from "assets/video/step3.mp4";
-
+import LoadingVideoSrc from "assets/video/loading.mp4";
+import Poster1Src from "assets/image/step1_first_frame.png";
 import InputContainer from "./Result.styled";
 
 const Result = (): JSX.Element => {
   return (
     <InputContainer>
       <Loading
-        width={window.innerWidth < 468 ? window.innerWidth / 1.8 : 428}
-        src={Step3VideoSrc}
+        width={window.innerWidth < 468 ? window.innerWidth - 80 : 428}
+        src={LoadingVideoSrc}
+        poster={Poster1Src}
       />
     </InputContainer>
   );

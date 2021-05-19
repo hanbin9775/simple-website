@@ -38,6 +38,7 @@ export interface StepProp {
 export interface BackGroundVideoProp {
   width: number;
   src: string;
+  poster: string;
 }
 
 export interface BackArrowProp {
