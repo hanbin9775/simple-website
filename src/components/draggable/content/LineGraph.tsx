@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Slider from "@material-ui/core/Slider";
 import { makeStyles } from "@material-ui/core/styles";
+import userContext from "UserContext";
 import * as s from "./Content.styled";
 
 const useStyles = makeStyles({
@@ -24,15 +25,8 @@ const useStyles = makeStyles({
 });
 
 const LineGraph = (): JSX.Element => {
-  const [thumbValues, setThumbValues] = useState<number[]>([
-    50,
-    50,
-    50,
-    50,
-    50,
-    50,
-    50,
-  ]);
+  const { state } = React.useContext(userContext);
+  const [thumbValues, setThumbValues] = useState<number[]>(state.graphValues);
   const [pathInfo, setPathInfo] = useState<string>("");
   const [fillInfo, setFillInfo] = useState<string>("");
   const classes = useStyles();
@@ -47,7 +41,7 @@ const LineGraph = (): JSX.Element => {
     if (typeof newValue === "number") {
       tempValues[index] = newValue;
     }
-    // console.log(tempValues);
+    state.graphValues = tempValues;
     setThumbValues(tempValues);
   };
 
@@ -99,7 +93,7 @@ const LineGraph = (): JSX.Element => {
               active: classes.active,
               rail: classes.rail,
             }}
-            step={20}
+            step={25}
             className="not-draggable"
             orientation="vertical"
             value={value}

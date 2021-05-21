@@ -8,23 +8,27 @@ import BackGroundVideo from "components/bg_video/BackGroundVideo";
 import Step1VideoSrc from "assets/video/step1.mp4";
 import Poster1Src from "assets/image/step1_first_frame.png";
 import Back from "components/back";
+import userContext from "UserContext";
 import InputContainer from "./Step1.styled";
 
 const Step1 = (): JSX.Element => {
-  const [name, setName] = useState<string>("");
-  const [age, setAge] = useState<number>();
+  const { state } = React.useContext(userContext);
+  const [name, setName] = useState<string>(state.name);
+  const [age, setAge] = useState<number>(state.age);
   const [isFullfilled, setFullfilled] = useState<boolean>(false);
   const [viewportHeight, setViewportHeight] = useState<number>(
     window.innerHeight
   );
 
   const onChangeName = (ev: React.ChangeEvent<HTMLInputElement>) => {
+    state.name = ev.target.value;
     setName(ev.target.value);
   };
 
   const onChangeAge = (ev: React.ChangeEvent<HTMLInputElement>) => {
     const input = Number(ev.target.value);
     if (Number.isInteger(input)) {
+      state.age = input;
       setAge(input);
     }
   };

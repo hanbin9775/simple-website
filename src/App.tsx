@@ -4,11 +4,9 @@ import AppRouter from "./Router";
 
 const App: React.FC = (): JSX.Element => {
   return (
-    <>
-      <BrowserRouter>
-        <AppRouter />
-      </BrowserRouter>
-    </>
+    <BrowserRouter>
+      <AppRouter />
+    </BrowserRouter>
   );
 };
 
