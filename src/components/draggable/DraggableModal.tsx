@@ -21,6 +21,8 @@ const DraggableModal = ({
   onChangeInput2,
   paragraph,
   setFullfilled,
+  raiseModalTrigger,
+  setRaiseModalTrigger,
 }: ModalProp): JSX.Element => {
   const [ypos, setYpos] = useState<number>(bottomBound);
 
@@ -54,6 +56,13 @@ const DraggableModal = ({
       }
     }
   });
+
+  useEffect(() => {
+    if (raiseModalTrigger && ypos === bottomBound) {
+      setYpos(topBound);
+    }
+    setRaiseModalTrigger(false);
+  }, [raiseModalTrigger, ypos, bottomBound, setRaiseModalTrigger, topBound]);
 
   return (
     <Draggable

@@ -16,9 +16,14 @@ const Step1 = (): JSX.Element => {
   const [name, setName] = useState<string>(state.name);
   const [age, setAge] = useState<number>(state.age);
   const [isFullfilled, setFullfilled] = useState<boolean>(false);
+  const [raiseModalTrigger, setRaiseModalTrigger] = useState<boolean>(false);
   const [viewportHeight, setViewportHeight] = useState<number>(
     window.innerHeight
   );
+
+  const onClickModalDown = () => {
+    setRaiseModalTrigger(true);
+  };
 
   const onChangeName = (ev: React.ChangeEvent<HTMLInputElement>) => {
     state.name = ev.target.value;
@@ -62,11 +67,14 @@ const Step1 = (): JSX.Element => {
         value2={age}
         onChangeInput1={onChangeName}
         onChangeInput2={onChangeAge}
+        raiseModalTrigger={raiseModalTrigger}
+        setRaiseModalTrigger={setRaiseModalTrigger}
       />
       <StepModal
         isFullfilled={isFullfilled}
         moveTo="./step2"
         buttonText="알려줄게요!"
+        onClick={onClickModalDown}
       />
     </InputContainer>
   );

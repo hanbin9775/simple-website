@@ -14,6 +14,8 @@ export interface ModalProp {
   // Step2
   paragraph?: string;
   setFullfilled?: (isFullfilled: boolean) => void;
+  raiseModalTrigger: boolean;
+  setRaiseModalTrigger: (raiseModalTrigger: boolean) => void;
 }
 
 export interface ModalTextInputProp {
@@ -33,6 +35,7 @@ export interface StepProp {
   moveTo: string;
   isFullfilled: boolean;
   buttonText: string;
+  onClick: () => void;
 }
 
 export interface BackGroundVideoProp {

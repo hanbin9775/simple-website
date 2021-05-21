@@ -6,11 +6,12 @@ const StepModal = ({
   moveTo,
   isFullfilled,
   buttonText,
+  onClick,
 }: StepProp): JSX.Element => {
   return (
     <s.ModalContainer>
       <s.ContentWrapper>
-        <s.ButtonWrapper>
+        <s.ButtonWrapper onClick={onClick}>
           <s.StepButtpn
             to={{
               pathname: moveTo,
