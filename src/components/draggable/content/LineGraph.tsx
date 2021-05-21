@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Slider from "@material-ui/core/Slider";
 import { makeStyles } from "@material-ui/core/styles";
 import userContext from "UserContext";
+
 import * as s from "./Content.styled";
 
 const useStyles = makeStyles({
@@ -106,7 +107,7 @@ const LineGraph = (): JSX.Element => {
       </s.SliderWrapper>
       <s.SliderLabelWrapper>
         {thumbValues.map((value, index) => (
-          <s.SliderLabel>{index + 21}</s.SliderLabel>
+          <s.SliderLabel>{state.age - 6 + index}</s.SliderLabel>
         ))}
       </s.SliderLabelWrapper>
     </>

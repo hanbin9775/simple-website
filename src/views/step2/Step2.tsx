@@ -8,9 +8,11 @@ import BackGroundVideo from "components/bg_video/BackGroundVideo";
 import Step2VideoSrc from "assets/video/step2.mp4";
 import Poster2Src from "assets/image/step2_first_frame.png";
 import Back from "components/back";
+import userContext from "UserContext";
 import * as s from "./Step2.styled";
 
 const Step2 = (): JSX.Element => {
+  const { state } = React.useContext(userContext);
   const [isFullfilled, setFullfilled] = useState<boolean>(false);
   const [viewportHeight, setViewportHeight] = useState<number>(
     window.innerHeight
@@ -34,7 +36,7 @@ const Step2 = (): JSX.Element => {
         step={2}
         title="STEP #2"
         description="눈을 감고 인생을 돌아보세요"
-        paragraph="한빈님의 인생에서 빛나는 순간과 어두운 순간을 모두 떠올려 보세요."
+        paragraph={`${state.name}님의 인생에서 빛나는 순간과 어두운 순간을 모두 떠올려 보세요.`}
         setFullfilled={setFullfilled}
       />
       <StepModal
