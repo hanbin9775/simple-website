@@ -2,19 +2,20 @@ import React, { useState, useEffect } from "react";
 import Slider from "@material-ui/core/Slider";
 import { makeStyles } from "@material-ui/core/styles";
 import userContext from "UserContext";
+import { appWidth, interactColor } from "theme";
 
 import * as s from "./Content.styled";
 
 const useStyles = makeStyles({
   root: {
-    color: "#4400AA",
+    color: interactColor,
     padding: "0 18px !important",
   },
   thumb: {
     width: "10px",
     height: "10px",
-    marginLeft: "-4px",
-    marginBottom: "-5px",
+    marginLeft: "-4px !important",
+    marginBottom: "-5px !important",
   },
   active: {
     transform: "scale(2,2)",
@@ -50,15 +51,13 @@ const LineGraph = (): JSX.Element => {
     let newPathInfo = thumbValues
       .map((value, index) => {
         if (index === 0) {
-          return `M${18} ${200 - value * 2}`;
+          return `M${19} ${200 - value * 2}`;
         }
-        return `L${18 + (index * (window.innerWidth - 76)) / 6} ${
-          200 - value * 2
-        }`;
+        return `L${19 + (index * (appWidth - 78)) / 6} ${200 - value * 2}`;
       })
       .join("");
     setPathInfo(newPathInfo);
-    newPathInfo += `L${21 + window.innerWidth - 82} 200 L21 200`;
+    newPathInfo += `L${18 + appWidth - 76} 200 L18 200`;
     setFillInfo(newPathInfo);
   }, [thumbValues]);
 
@@ -66,10 +65,7 @@ const LineGraph = (): JSX.Element => {
     <>
       <s.SliderUnit> 단위/나이 </s.SliderUnit>
       <s.SliderWrapper>
-        <s.SliderGraphCanvas
-          width={window.innerWidth > 468 ? 428 : window.innerWidth - 40}
-          height="200"
-        >
+        <s.SliderGraphCanvas width={appWidth - 40} height="200">
           <defs>
             <linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%">
               <stop
@@ -82,7 +78,12 @@ const LineGraph = (): JSX.Element => {
               />
             </linearGradient>
           </defs>
-          <path d={pathInfo} stroke="#4400AA" strokeWidth="3" fill="none" />
+          <path
+            d={pathInfo}
+            stroke={interactColor}
+            strokeWidth="3"
+            fill="none"
+          />
           <path d={fillInfo} stroke="none" fill="url(#grad1)" />
         </s.SliderGraphCanvas>
         {thumbValues.map((value, index) => (

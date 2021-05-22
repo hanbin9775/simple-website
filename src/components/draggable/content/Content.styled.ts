@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 import styled from "styled-components";
+import { modalColor } from "theme";
 
 export const InputWrapper = styled.div`
   margin-bottom: 16px;
@@ -40,7 +41,7 @@ export const SliderUnit = styled.div`
 `;
 
 export const SliderGraphCanvas = styled.svg`
-  background-color: #e8e8ed;
+  background-color: ${modalColor};
   position: fixed;
 `;
 

@@ -9,6 +9,7 @@ import Step1VideoSrc from "assets/video/step1.mp4";
 import Poster1Src from "assets/image/step1_first_frame.png";
 import Back from "components/back";
 import userContext from "UserContext";
+import { appWidth } from "theme";
 import InputContainer from "./Step1.styled";
 
 const Step1 = (): JSX.Element => {
@@ -51,7 +52,7 @@ const Step1 = (): JSX.Element => {
     <InputContainer>
       <Back path="/" />
       <BackGroundVideo
-        width={window.innerWidth < 468 ? window.innerWidth - 80 : 428}
+        width={appWidth - 80}
         src={Step1VideoSrc}
         poster={Poster1Src}
       />

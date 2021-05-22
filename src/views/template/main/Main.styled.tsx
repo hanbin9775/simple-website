@@ -1,15 +1,12 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { appColor, appWidth, modalColor } from "theme";
 
 export const Container = styled.section`
-  background-color: #5500ff;
+  background-color: ${appColor};
   height: ${window.innerHeight}px;
-  width: 468px;
-
-  @media only screen and (max-width: 468px) {
-    width: 100%;
-  }
+  width: ${appWidth}px;
 `;
 
 export const ContentWrapper = styled.div`
@@ -59,7 +56,7 @@ export const Button = styled(Link)`
   width: 100%;
   text-align: center;
   padding: 12px 0;
-  background-color: #e8e8ed;
+  background-color: ${modalColor};
   border-radius: 8px;
   text-decoration: none;
   font-weight: 600;

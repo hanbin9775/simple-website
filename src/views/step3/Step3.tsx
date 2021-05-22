@@ -9,6 +9,7 @@ import Step3VideoSrc from "assets/video/step3.mp4";
 import Poster3Src from "assets/image/step3_first_frame.png";
 import Back from "components/back";
 import userContext from "UserContext";
+import { appWidth } from "theme";
 
 import * as s from "./Step3.styled";
 
@@ -31,7 +32,7 @@ const Step3 = (): JSX.Element => {
     <s.InputContainer>
       <Back path="/step2" />
       <BackGroundVideo
-        width={window.innerWidth < 468 ? window.innerWidth - 80 : 428}
+        width={appWidth - 80}
         src={Step3VideoSrc}
         poster={Poster3Src}
       />

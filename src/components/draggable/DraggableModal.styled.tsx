@@ -1,8 +1,9 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 import styled from "styled-components";
+import { modalColor } from "theme";
 
 export const ModalContainer = styled.section`
-  background-color: #e8e8ed;
+  background-color: ${modalColor};
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   position: relative;

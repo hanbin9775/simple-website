@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 import styled from "styled-components";
+import { appColor, appWidth } from "theme";
 
 export const LoadingSection = styled.section`
   display: flex;
@@ -7,15 +8,14 @@ export const LoadingSection = styled.section`
   align-items: center;
   gap: 1em;
   position: fixed;
-  width: 468px;
+  width: ${appWidth}px;
   height: 100vh;
   z-index: 1000;
   padding-top: 5%;
-  background-color: #5500ff;
+  background-color: ${appColor};
   text-align: center;
 
   @media only screen and (max-width: 468px) {
-    width: 100%;
     padding-top: 15%;
   }
 `;

@@ -1,10 +1,11 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { appColor, appWidth } from "theme";
 
 export const InputContainer = styled.section`
-  width: 468px;
-  background-color: #5500ff;
+  width: ${appWidth}px;
+  background-color: ${appColor};
 `;
 
 export const DescribeText = styled.h2`

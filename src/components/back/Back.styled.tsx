@@ -1,16 +1,13 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { appWidth } from "theme";
 
 export const ButtonWrapper = styled.div`
   position: fixed;
-  width: 468px;
+  width: ${appWidth}px;
   top: 20px;
   z-index: 1000;
-
-  @media only screen and (max-width: 468px) {
-    width: 100%;
-  }
 `;
 
 export const Touchable = styled(Link)`
