@@ -87,6 +87,7 @@ const LineGraph = (): JSX.Element => {
           />
           <path d={fillInfo} stroke="none" fill="url(#grad1)" />
         </s.SliderGraphCanvas>
+        {/* element의 재배열, 추가, 삭제가 이루어지지 않으므로 key값으로 index 넘겨줌 */}
         {thumbValues.map((value, index) => (
           <Slider
             key={index}

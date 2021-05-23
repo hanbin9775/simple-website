@@ -12,14 +12,14 @@ const StepModal = ({
     <s.ModalContainer>
       <s.ContentWrapper>
         <s.ButtonWrapper onClick={onClick}>
-          <s.StepButtpn
+          <s.StepButton
             to={{
               pathname: moveTo,
             }}
-            isFullfilled={isFullfilled}
+            isfullfilled={isFullfilled.toString()}
           >
             {isFullfilled ? "다음으로" : buttonText}
-          </s.StepButtpn>
+          </s.StepButton>
         </s.ButtonWrapper>
       </s.ContentWrapper>
     </s.ModalContainer>

@@ -22,12 +22,12 @@ export const ButtonWrapper = styled.div`
   margin-top: 24px;
 `;
 
-export const StepButtpn = styled(Link)<{ isFullfilled: boolean }>`
+export const StepButton = styled(Link)<{ isfullfilled: string }>`
   width: 100%;
   height: 44px;
   margin-top: 30px;
   background-color: ${(props) =>
-    props.isFullfilled ? interactColor : "#555555"};
+    props.isfullfilled === "true" ? interactColor : "#555555"};
   font-size: 18px;
   color: #fff;
   border-radius: 8px;
@@ -35,5 +35,6 @@ export const StepButtpn = styled(Link)<{ isFullfilled: boolean }>`
   text-align: center;
   text-decoration: none;
   line-height: 2.4em;
-  pointer-events: ${(props) => (props.isFullfilled ? "auto" : "none")};
+  pointer-events: ${(props) =>
+    props.isfullfilled === "true" ? "auto" : "none"};
 `;
