@@ -32,7 +32,7 @@ const Step3 = (): JSX.Element => {
     <s.InputContainer>
       <Back path="/step2" />
       <BackGroundVideo
-        width={appWidth - 80}
+        width={appWidth - 120}
         src={Step3VideoSrc}
         poster={Poster3Src}
       />

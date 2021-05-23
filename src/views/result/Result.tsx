@@ -12,7 +12,7 @@ const Result = (): JSX.Element => {
   return (
     <InputContainer>
       <Loading
-        width={appWidth - 80}
+        width={appWidth - 120}
         src={LoadingVideoSrc}
         poster={Poster1Src}
       />
