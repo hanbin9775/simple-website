@@ -9,7 +9,7 @@ import Step1VideoSrc from "assets/video/step1.mp4";
 import Poster1Src from "assets/image/step1_first_frame.png";
 import Back from "components/back";
 import userContext from "UserContext";
-import { appWidth } from "theme";
+import { appWidth, appHeight } from "theme";
 import InputContainer from "./Step1.styled";
 
 const Step1 = (): JSX.Element => {
@@ -18,9 +18,6 @@ const Step1 = (): JSX.Element => {
   const [age, setAge] = useState<number>(state.age);
   const [isFullfilled, setFullfilled] = useState<boolean>(false);
   const [raiseModalTrigger, setRaiseModalTrigger] = useState<boolean>(false);
-  const [viewportHeight, setViewportHeight] = useState<number>(
-    window.innerHeight
-  );
 
   const onClickModalDown = () => {
     setRaiseModalTrigger(true);
@@ -44,10 +41,6 @@ const Step1 = (): JSX.Element => {
     age,
   ]);
 
-  useEffect(() => {
-    setViewportHeight(window.innerHeight);
-  }, []);
-
   return (
     <InputContainer>
       <Back path="/" />
@@ -57,8 +50,8 @@ const Step1 = (): JSX.Element => {
         poster={Poster1Src}
       />
       <DraggableModal
-        topBound={viewportHeight - 480}
-        bottomBound={viewportHeight - 280}
+        topBound={appHeight - 480}
+        bottomBound={appHeight - 280}
         step={1}
         title="STEP #1"
         description="당신에 대해 알려주세요"
