@@ -1,3 +1,4 @@
+/* eslint-disable  react/no-array-index-key */
 import React, { useState, useEffect } from "react";
 import Slider from "@material-ui/core/Slider";
 import { makeStyles } from "@material-ui/core/styles";
@@ -88,6 +89,7 @@ const LineGraph = (): JSX.Element => {
         </s.SliderGraphCanvas>
         {thumbValues.map((value, index) => (
           <Slider
+            key={index}
             track={false}
             classes={{
               root: classes.root,
@@ -108,7 +110,7 @@ const LineGraph = (): JSX.Element => {
       </s.SliderWrapper>
       <s.SliderLabelWrapper>
         {thumbValues.map((value, index) => (
-          <s.SliderLabel>{state.age - 6 + index}</s.SliderLabel>
+          <s.SliderLabel key={index}>{state.age - 6 + index}</s.SliderLabel>
         ))}
       </s.SliderLabelWrapper>
     </>
