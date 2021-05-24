@@ -24,6 +24,7 @@ const DraggableModal = ({
   raiseModalTrigger,
   setRaiseModalTrigger,
 }: ModalProp): JSX.Element => {
+  const nodeRef = React.useRef(null);
   const [ypos, setYpos] = useState<number>(bottomBound);
 
   const getCurrentY = (element: Element) => {
@@ -66,6 +67,7 @@ const DraggableModal = ({
 
   return (
     <Draggable
+      nodeRef={nodeRef}
       cancel=".not-draggable"
       axis="y"
       defaultPosition={{ x: 0, y: bottomBound }}
@@ -76,7 +78,7 @@ const DraggableModal = ({
       position={{ x: 0, y: ypos }}
       onDrag={onDrag}
     >
-      <s.ModalContainer>
+      <s.ModalContainer ref={nodeRef}>
         <s.HandleWrapper>
           <s.Handle />
         </s.HandleWrapper>

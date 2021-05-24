@@ -39,7 +39,6 @@ const LineGraph = (): JSX.Element => {
     newValue: number | number[],
     index: number
   ) => {
-    // console.log(index);
     const tempValues = [...thumbValues];
     if (typeof newValue === "number") {
       tempValues[index] = newValue;

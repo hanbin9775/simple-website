@@ -1,5 +1,5 @@
 /**
- * @description home 화면
+ * @description step3 화면
  */
 import React, { useState } from "react";
 import DraggableModal from "components/draggable";

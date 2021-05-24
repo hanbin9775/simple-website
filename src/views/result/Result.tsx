@@ -1,5 +1,5 @@
 /**
- * @description home 화면
+ * @description 결과 화면
  */
 import React from "react";
 import Loading from "components/loading/Loading";

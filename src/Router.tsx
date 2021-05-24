@@ -19,18 +19,24 @@ const routes = [
 ];
 
 const AppRouter: React.FC = () => {
+  const nodeRef = React.useRef(null);
   return (
     <>
       {routes.map(({ path, Component }) => (
         <Route key={path} exact path={path}>
           {({ match }) => (
             <CSSTransition
+              nodeRef={nodeRef}
               in={match != null}
               timeout={300}
               classNames="page"
               unmountOnExit
             >
-              <div className="page" style={{ height: window.innerHeight }}>
+              <div
+                ref={nodeRef}
+                className="page"
+                style={{ height: window.innerHeight }}
+              >
                 <Component />
               </div>
             </CSSTransition>
