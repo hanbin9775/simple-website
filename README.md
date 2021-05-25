@@ -16,22 +16,8 @@ You can try on https://simple-website-9b56c.web.app/
 
 ## Using..
 
-React.Js with Typescript
-
-## What did I learned...
-
-1. React project setting
-> Lint, Prettier, Create React App
-2. Build a file directory structure
-> Consider which element to componentize 
-3. Typescript
-> Interface, Function/Component Argument Types
-4. Firebase
-> Deploy, Store
-5. Svg Controlling
-> Path, Gradient
-6. Managing Issues
-
+Developed with React.Js, Typescript
+Firebase on deployment
 
 ## Run Project on Local
 
@@ -39,3 +25,24 @@ React.Js with Typescript
 npm install
 npm run start
 ```
+
+## What did I learned...
+
+1. React project setting
+> Lint, Prettier, Create React App
+2. Handle cross device issues
+> Viewport height/width, meta tag  
+3. Build a file directory structure
+> Consider which element to componentize 
+4. Typescript
+> Interface, Function/Component Argument Types
+5. Firebase
+> Deploy, Store
+6. Svg Controlling
+> Path, Gradient
+7. Global State, Variable manage
+> Context Api
+8. Managing Issues
+
+
+
