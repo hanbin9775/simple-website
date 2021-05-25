@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 # 인생 주식 분석 서비스
 
-당신의 인생 그래프와 비슷한 가상화폐 그래프를 찾아 당신의 미래를 예측합니다
+당신의 인생 그래프와 가장 비슷한 가상화폐 그래프를 찾아드립니다!
 
 ## Deployed by Firebase Hosting
 
@@ -17,6 +17,21 @@ You can try on https://simple-website-9b56c.web.app/
 ## Using..
 
 React.Js with Typescript
+
+## What did I learned...
+
+1. React project setting
+> Lint, Prettier, Create React App
+2. Build a file directory structure
+> Consider which element to componentize 
+3. Typescript
+> Interface, Function/Component Argument Types
+4. Firebase
+> Deploy, Store
+5. Svg Controlling
+> Path, Gradient
+6. Managing Issues
+
 
 ## Run Project on Local
 
