@@ -6,6 +6,7 @@ const userContext = React.createContext({
     name: "",
     age: 0,
     graphValues: [50, 50, 50, 50, 50, 50, 50],
+    translatedGraphInfo: ["+", "+", "+"],
   },
 });
 

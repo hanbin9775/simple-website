@@ -43,8 +43,41 @@ const LineGraph = (): JSX.Element => {
     if (typeof newValue === "number") {
       tempValues[index] = newValue;
     }
+
+    translateGraph(tempValues);
+
     state.graphValues = tempValues;
     setThumbValues(tempValues);
+  };
+
+  const translateGraph = (newValues: number[]) => {
+    for (let i = 0; i < 6; i += 2) {
+      const first = newValues[i];
+      const second = newValues[i + 1];
+      const third = newValues[i + 2];
+
+      const sectionAarea =
+        (Math.max(first, second) +
+          Math.min(first, second) +
+          Math.max(second, third) +
+          Math.min(second, third)) /
+        2;
+      if (sectionAarea > 100) {
+        state.translatedGraphInfo[i / 2] = "+";
+      } else if (sectionAarea < 100) {
+        state.translatedGraphInfo[i / 2] = "-";
+      } else if (first < third) {
+        state.translatedGraphInfo[i / 2] = "+";
+      } else if (first > third) {
+        state.translatedGraphInfo[i / 2] = "-";
+      } else if (second < third) {
+        state.translatedGraphInfo[i / 2] = "+";
+      } else if (second > third) {
+        state.translatedGraphInfo[i / 2] = "-";
+      } else {
+        state.translatedGraphInfo[i / 2] = "+";
+      }
+    }
   };
 
   useEffect(() => {
