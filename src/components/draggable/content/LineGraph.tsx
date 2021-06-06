@@ -63,19 +63,19 @@ const LineGraph = (): JSX.Element => {
           Math.min(second, third)) /
         2;
       if (sectionAarea > 100) {
-        state.translatedGraphInfo[i / 2] = "+";
+        state.translatedGraphInfo[i / 2] = 1;
       } else if (sectionAarea < 100) {
-        state.translatedGraphInfo[i / 2] = "-";
+        state.translatedGraphInfo[i / 2] = 0;
       } else if (first < third) {
-        state.translatedGraphInfo[i / 2] = "+";
+        state.translatedGraphInfo[i / 2] = 1;
       } else if (first > third) {
-        state.translatedGraphInfo[i / 2] = "-";
+        state.translatedGraphInfo[i / 2] = 0;
       } else if (second < third) {
-        state.translatedGraphInfo[i / 2] = "+";
+        state.translatedGraphInfo[i / 2] = 1;
       } else if (second > third) {
-        state.translatedGraphInfo[i / 2] = "-";
+        state.translatedGraphInfo[i / 2] = 0;
       } else {
-        state.translatedGraphInfo[i / 2] = "+";
+        state.translatedGraphInfo[i / 2] = 1;
       }
     }
   };
