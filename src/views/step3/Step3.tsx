@@ -30,12 +30,29 @@ const Step3 = (): JSX.Element => {
         poster={Poster3Src}
       />
       <DraggableModal
-        topBound={appHeight - 629}
+        topBound={appHeight - 829}
         bottomBound={appHeight - 280}
         step={3}
         title="STEP #3"
-        description="인생 그래프를 그려보세요"
-        paragraph={`${state.name}님의 최근 7년의 인생굴곡을 위아래로 움직여 표현하세요`}
+        description="간단한 심리검사를 진행해주세요"
+        surverys={[
+          {
+            paragraph: `${state.name}님의 과거보다 미래가 어느정도 더 빛날 것이라고 생각하십니까?`,
+            sliderInfo: {
+              type: 0,
+              labelStrings: ["어두움", "밝음"],
+              degreeStrings: ["암흑", "어둠", "보통", "빛남", "눈부심"],
+            },
+          },
+          {
+            paragraph: `${state.name}님의 과거보다 미래가 어느정도 더 빛날 것이라고 생각하십니까?`,
+            sliderInfo: {
+              type: 0,
+              labelStrings: ["어두움", "밝음"],
+              degreeStrings: ["암흑", "어둠", "보통", "빛남", "눈부심"],
+            },
+          },
+        ]}
         setFullfilled={setFullfilled}
         raiseModalTrigger={raiseModalTrigger}
         setRaiseModalTrigger={setRaiseModalTrigger}

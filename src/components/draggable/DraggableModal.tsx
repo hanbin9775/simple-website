@@ -19,6 +19,7 @@ const DraggableModal = ({
   input2,
   value2,
   onChangeInput2,
+  surverys,
   paragraph,
   setFullfilled,
   raiseModalTrigger,
@@ -85,6 +86,7 @@ const DraggableModal = ({
         <s.ContentWrapper>
           <s.Title>{title}</s.Title>
           <s.Describe>{description}</s.Describe>
+          {/* step1 : 이름과 나이 입력 */}
           {step === 1 && (
             <TextInput
               input1={input1}
@@ -95,8 +97,10 @@ const DraggableModal = ({
               onChangeInput2={onChangeInput2}
             />
           )}
+          {/* step2 : 이름과 나이 입력 */}
           {step === 2 && <Paragraph content={paragraph} />}
-          {step === 3 && <Paragraph content={paragraph} />}
+          {step === 3 &&
+            surverys?.map((survey) => <Paragraph content={survey.paragraph} />)}
           {step === 4 && (
             <>
               <Paragraph content={paragraph} />
