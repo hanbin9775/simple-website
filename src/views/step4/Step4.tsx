@@ -11,9 +11,9 @@ import Back from "components/back";
 import userContext from "UserContext";
 import { appWidth, appHeight } from "theme";
 
-import * as s from "./Step3.styled";
+import * as s from "./Step4.styled";
 
-const Step3 = (): JSX.Element => {
+const Step4 = (): JSX.Element => {
   const { state } = React.useContext(userContext);
   const [isFullfilled, setFullfilled] = useState<boolean>(false);
   const [raiseModalTrigger, setRaiseModalTrigger] = useState<boolean>(false);
@@ -23,7 +23,7 @@ const Step3 = (): JSX.Element => {
 
   return (
     <s.InputContainer>
-      <Back path="/step2" />
+      <Back path="/step3" />
       <BackGroundVideo
         width={appWidth - 120}
         src={Step3VideoSrc}
@@ -32,8 +32,8 @@ const Step3 = (): JSX.Element => {
       <DraggableModal
         topBound={appHeight - 629}
         bottomBound={appHeight - 280}
-        step={3}
-        title="STEP #3"
+        step={4}
+        title="STEP #4"
         description="인생 그래프를 그려보세요"
         paragraph={`${state.name}님의 최근 7년의 인생굴곡을 위아래로 움직여 표현하세요`}
         setFullfilled={setFullfilled}
@@ -42,7 +42,7 @@ const Step3 = (): JSX.Element => {
       />
       <StepModal
         isFullfilled={isFullfilled}
-        moveTo="/step4"
+        moveTo="/result"
         buttonText="설명보기"
         onClick={onClickModalDown}
       />
@@ -50,4 +50,4 @@ const Step3 = (): JSX.Element => {
   );
 };
 
-export default Step3;
+export default Step4;

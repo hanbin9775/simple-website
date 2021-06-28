@@ -96,7 +96,8 @@ const DraggableModal = ({
             />
           )}
           {step === 2 && <Paragraph content={paragraph} />}
-          {step === 3 && (
+          {step === 3 && <Paragraph content={paragraph} />}
+          {step === 4 && (
             <>
               <Paragraph content={paragraph} />
               <LineGraph />
