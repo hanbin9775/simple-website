@@ -13,18 +13,18 @@ export interface ModalProp {
   onChangeInput2?: (ev: React.ChangeEvent<HTMLInputElement>) => void;
   // Step2
   paragraph?: string;
-  surverys?: Array<SurveyObject>;
+  surverys?: Array<SurveyObjectProp>;
   setFullfilled?: (isFullfilled: boolean) => void;
   raiseModalTrigger: boolean;
   setRaiseModalTrigger: (raiseModalTrigger: boolean) => void;
 }
 
-export interface SurveyObject {
+export interface SurveyObjectProp {
   paragraph: string;
-  sliderInfo: SurveySlider;
+  sliderInfo: SurveySliderProp;
 }
 
-export interface SurveySlider {
+export interface SurveySliderProp {
   type: number; // 0 or 1
   labelStrings: Array<string>;
   degreeStrings: Array<string>;

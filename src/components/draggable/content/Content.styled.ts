@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 import styled from "styled-components";
-import { modalColor } from "theme";
+import { modalColor, grayText } from "theme";
 
 export const InputWrapper = styled.div`
   margin-bottom: 16px;
@@ -51,4 +51,28 @@ export const SliderLabelWrapper = styled.div`
   padding: 8px 10px 0 10px;
 `;
 
-export const SliderLabel = styled.div``;
+export const SliderLabel = styled.div`
+  font-size: 14px;
+`;
+
+export const SliderInputWrapper = styled.div`
+  margin: 16px 0 32px 0;
+`;
+
+export const SliderInputLabels = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+`;
+
+export const SliderInputLabel = styled.div``;
+
+export const SliderInputDegrees = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+export const SliderInputDegree = styled.div`
+  font-size: 12px;
+  color: ${grayText};
+`;

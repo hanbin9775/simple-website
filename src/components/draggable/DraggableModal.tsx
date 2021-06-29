@@ -6,6 +6,7 @@ import TextInput from "./content/TextInput";
 import Paragraph from "./content/Paragraph";
 import LineGraph from "./content/LineGraph";
 import * as s from "./DraggableModal.styled";
+import SliderInput from "./content/SliderInput";
 
 const DraggableModal = ({
   topBound,
@@ -100,7 +101,16 @@ const DraggableModal = ({
           {/* step2 : 이름과 나이 입력 */}
           {step === 2 && <Paragraph content={paragraph} />}
           {step === 3 &&
-            surverys?.map((survey) => <Paragraph content={survey.paragraph} />)}
+            surverys?.map((survey) => (
+              <>
+                <Paragraph content={survey.paragraph} />
+                <SliderInput
+                  type={survey.sliderInfo.type}
+                  labelStrings={survey.sliderInfo.labelStrings}
+                  degreeStrings={survey.sliderInfo.degreeStrings}
+                />
+              </>
+            ))}
           {step === 4 && (
             <>
               <Paragraph content={paragraph} />

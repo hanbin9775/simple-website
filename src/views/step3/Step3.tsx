@@ -45,11 +45,25 @@ const Step3 = (): JSX.Element => {
             },
           },
           {
-            paragraph: `${state.name}님의 과거보다 미래가 어느정도 더 빛날 것이라고 생각하십니까?`,
+            paragraph: `눈을 감고 인생을 돌아 보세요. 그리고 가장 좋았던 해와 안좋았던 해를 눌러주세요.`,
             sliderInfo: {
               type: 0,
-              labelStrings: ["어두움", "밝음"],
-              degreeStrings: ["암흑", "어둠", "보통", "빛남", "눈부심"],
+              labelStrings: ["작음", "큼"],
+              degreeStrings: ["매우 작음", "작음", "보통", "큼", "매우 큼"],
+            },
+          },
+          {
+            paragraph: `탄생과 죽음 사이, 당신은 어디쯤 계십니까?`,
+            sliderInfo: {
+              type: 0,
+              labelStrings: ["탄생", "죽음"],
+              degreeStrings: [
+                "탄생",
+                "탄생에 가까움",
+                "보통",
+                "죽음에 가까움",
+                "죽음",
+              ],
             },
           },
         ]}
