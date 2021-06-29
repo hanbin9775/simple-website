@@ -30,22 +30,28 @@ const type1Style = makeStyles({
 const type2Style = makeStyles({
   root: {
     color: interactColor,
-    height: 8,
+    height: 30,
   },
   thumb: {
-    height: 15,
     width: 15,
-    bottom: 11,
+    bottom: 8,
+    height: 40,
+    borderRadius: 15,
+    backgroundColor: "#888888",
+    border: "1px solid white",
   },
   track: {
-    height: 6,
+    height: 30,
     borderRadius: 4,
-    backgroundColor: grayColor,
+    background: "none",
   },
   rail: {
-    height: 6,
+    height: 30,
     borderRadius: 4,
-    backgroundColor: grayColor,
+    opacity: 1,
+    border: `1px solid ${grayColor}`,
+    background:
+      "linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 27%, rgba(255,255,255,1) 100%)",
   },
 });
 
@@ -54,35 +60,34 @@ const SliderInput = ({
   labelStrings,
   degreeStrings,
 }: SurveySliderProp): JSX.Element => {
-  const classes = type1Style();
+  const type1Class = type1Style();
+  const type2Class = type2Style();
   return (
     <s.SliderInputWrapper>
       <s.SliderInputLabels>
         <s.SliderInputLabel>{labelStrings[0]}</s.SliderInputLabel>
         <s.SliderInputLabel>{labelStrings[1]}</s.SliderInputLabel>
       </s.SliderInputLabels>
-      {type === 0 && (
-        <>
-          <s.SliderInputDivParent>
-            <s.SliderInputDiv>
-              <Slider
-                step={100 / (degreeStrings.length - 1)}
-                className="not-draggable"
-                classes={{
-                  root: classes.root,
-                  thumb: classes.thumb,
-                  track: classes.track,
-                  rail: classes.rail,
-                }}
-              />
-            </s.SliderInputDiv>
-          </s.SliderInputDivParent>
-        </>
-      )}
-      {type === 1 && <></>}
+      <s.SliderInputDivParent>
+        <s.SliderInputDiv>
+          <Slider
+            step={100 / (degreeStrings.length - 1)}
+            className="not-draggable"
+            classes={{
+              root: type === 1 ? type1Class.root : type2Class.root,
+              thumb: type === 1 ? type1Class.thumb : type2Class.thumb,
+              track: type === 1 ? type1Class.track : type2Class.track,
+              rail: type === 1 ? type1Class.rail : type2Class.rail,
+            }}
+          />
+        </s.SliderInputDiv>
+      </s.SliderInputDivParent>
       <s.SliderInputDegrees>
         {degreeStrings.map((degree) => (
-          <s.SliderInputDegree>{degree}</s.SliderInputDegree>
+          <s.SliderInputDegree>
+            <s.SliderInputScale>|</s.SliderInputScale>
+            <div>{degree}</div>
+          </s.SliderInputDegree>
         ))}
       </s.SliderInputDegrees>
     </s.SliderInputWrapper>

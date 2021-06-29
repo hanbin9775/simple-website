@@ -28,7 +28,7 @@ const Step3 = (): JSX.Element => {
         poster={Poster3Src}
       />
       <DraggableModal
-        topBound={appHeight - 1329}
+        topBound={appHeight - 1480}
         bottomBound={appHeight - 280}
         step={3}
         title="STEP #3"
@@ -37,7 +37,7 @@ const Step3 = (): JSX.Element => {
           {
             paragraph: `주말에 시간을 보낸다면 몇 명과 보내고 싶으십니까?`,
             sliderInfo: {
-              type: 0,
+              type: 1,
               labelStrings: ["혼자", "여려명"],
               degreeStrings: ["0명", "1~3명", "4~6명", "7~9명", "10명이상"],
             },
@@ -45,7 +45,7 @@ const Step3 = (): JSX.Element => {
           {
             paragraph: `최근 1년의 당신의 감정이 현재 ‘0’이라면, 다음 1년의 당신의 감정은 몇 쯤 될 것이라고 생각하십니까?`,
             sliderInfo: {
-              type: 0,
+              type: 1,
               labelStrings: ["나쁨", "좋음"],
               degreeStrings: ["-3", "-2", "-1", "0", "+1", "+2", "+3"],
             },
@@ -53,7 +53,7 @@ const Step3 = (): JSX.Element => {
           {
             paragraph: `눈을 감고 당신이 살고 싶은 집을 상상해 보십시오. 그 집의 문의 크기는 전체 집과 비교할 때 어느 정도로 큽니까?`,
             sliderInfo: {
-              type: 0,
+              type: 1,
               labelStrings: ["작음", "큼"],
               degreeStrings: ["매우", "조금", "보통", "조금", "매우"],
             },
@@ -61,7 +61,7 @@ const Step3 = (): JSX.Element => {
           {
             paragraph: `젊음과 늙음 사이, 당신은 어디쯤 계십니까?`,
             sliderInfo: {
-              type: 0,
+              type: 1,
               labelStrings: ["젊음", "늙음"],
               degreeStrings: [
                 "매우",
@@ -77,7 +77,7 @@ const Step3 = (): JSX.Element => {
           {
             paragraph: `'나’를 떠올렸을 때 가장 잘 어울리는 밝기는 무엇입니까?`,
             sliderInfo: {
-              type: 0,
+              type: 2,
               labelStrings: ["어두움", "빛남"],
               degreeStrings: [
                 "매우",
