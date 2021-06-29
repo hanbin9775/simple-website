@@ -37,6 +37,7 @@ const Step2 = (): JSX.Element => {
         description="눈을 감고 인생을 돌아보세요"
         paragraph={`${state.name}님의 인생에서 빛나는 순간과 어두운 순간을 모두 떠올려 보세요.`}
         setFullfilled={setFullfilled}
+        snapAvailable
         raiseModalTrigger={raiseModalTrigger}
         setRaiseModalTrigger={setRaiseModalTrigger}
       />

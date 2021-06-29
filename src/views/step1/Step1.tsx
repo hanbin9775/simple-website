@@ -61,6 +61,7 @@ const Step1 = (): JSX.Element => {
         value2={age}
         onChangeInput1={onChangeName}
         onChangeInput2={onChangeAge}
+        snapAvailable
         raiseModalTrigger={raiseModalTrigger}
         setRaiseModalTrigger={setRaiseModalTrigger}
       />

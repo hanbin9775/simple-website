@@ -56,7 +56,7 @@ export const SliderLabel = styled.div`
 `;
 
 export const SliderInputWrapper = styled.div`
-  margin: 16px 0 32px 0;
+  margin: 16px 0 60px 0;
 `;
 
 export const SliderInputLabels = styled.div`
@@ -66,6 +66,16 @@ export const SliderInputLabels = styled.div`
 `;
 
 export const SliderInputLabel = styled.div``;
+
+export const SliderInputDivParent = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const SliderInputDiv = styled.div`
+  width: 95%;
+`;
 
 export const SliderInputDegrees = styled.div`
   display: flex;

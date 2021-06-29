@@ -8,13 +8,11 @@ import BackGroundVideo from "components/bg_video/BackGroundVideo";
 import Step3VideoSrc from "assets/video/step3.mp4";
 import Poster3Src from "assets/image/step3_first_frame.png";
 import Back from "components/back";
-import userContext from "UserContext";
 import { appWidth, appHeight } from "theme";
 
 import * as s from "./Step3.styled";
 
 const Step3 = (): JSX.Element => {
-  const { state } = React.useContext(userContext);
   const [isFullfilled, setFullfilled] = useState<boolean>(false);
   const [raiseModalTrigger, setRaiseModalTrigger] = useState<boolean>(false);
   const onClickModalDown = () => {
@@ -30,44 +28,71 @@ const Step3 = (): JSX.Element => {
         poster={Poster3Src}
       />
       <DraggableModal
-        topBound={appHeight - 829}
+        topBound={appHeight - 1329}
         bottomBound={appHeight - 280}
         step={3}
         title="STEP #3"
         description="간단한 심리검사를 진행해주세요"
         surverys={[
           {
-            paragraph: `${state.name}님의 과거보다 미래가 어느정도 더 빛날 것이라고 생각하십니까?`,
+            paragraph: `주말에 시간을 보낸다면 몇 명과 보내고 싶으십니까?`,
             sliderInfo: {
               type: 0,
-              labelStrings: ["어두움", "밝음"],
-              degreeStrings: ["암흑", "어둠", "보통", "빛남", "눈부심"],
+              labelStrings: ["혼자", "여려명"],
+              degreeStrings: ["0명", "1~3명", "4~6명", "7~9명", "10명이상"],
             },
           },
           {
-            paragraph: `눈을 감고 인생을 돌아 보세요. 그리고 가장 좋았던 해와 안좋았던 해를 눌러주세요.`,
+            paragraph: `최근 1년의 당신의 감정이 현재 ‘0’이라면, 다음 1년의 당신의 감정은 몇 쯤 될 것이라고 생각하십니까?`,
+            sliderInfo: {
+              type: 0,
+              labelStrings: ["나쁨", "좋음"],
+              degreeStrings: ["-3", "-2", "-1", "0", "+1", "+2", "+3"],
+            },
+          },
+          {
+            paragraph: `눈을 감고 당신이 살고 싶은 집을 상상해 보십시오. 그 집의 문의 크기는 전체 집과 비교할 때 어느 정도로 큽니까?`,
             sliderInfo: {
               type: 0,
               labelStrings: ["작음", "큼"],
-              degreeStrings: ["매우 작음", "작음", "보통", "큼", "매우 큼"],
+              degreeStrings: ["매우", "조금", "보통", "조금", "매우"],
             },
           },
           {
-            paragraph: `탄생과 죽음 사이, 당신은 어디쯤 계십니까?`,
+            paragraph: `젊음과 늙음 사이, 당신은 어디쯤 계십니까?`,
             sliderInfo: {
               type: 0,
-              labelStrings: ["탄생", "죽음"],
+              labelStrings: ["젊음", "늙음"],
               degreeStrings: [
-                "탄생",
-                "탄생에 가까움",
+                "매우",
+                "조금",
+                "적당히",
                 "보통",
-                "죽음에 가까움",
-                "죽음",
+                "적당히",
+                "조금",
+                "매우",
+              ],
+            },
+          },
+          {
+            paragraph: `'나’를 떠올렸을 때 가장 잘 어울리는 밝기는 무엇입니까?`,
+            sliderInfo: {
+              type: 0,
+              labelStrings: ["어두움", "빛남"],
+              degreeStrings: [
+                "매우",
+                "조금",
+                "적당히",
+                "보통",
+                "적당히",
+                "조금",
+                "매우",
               ],
             },
           },
         ]}
         setFullfilled={setFullfilled}
+        snapAvailable={false}
         raiseModalTrigger={raiseModalTrigger}
         setRaiseModalTrigger={setRaiseModalTrigger}
       />

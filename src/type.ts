@@ -15,6 +15,7 @@ export interface ModalProp {
   paragraph?: string;
   surverys?: Array<SurveyObjectProp>;
   setFullfilled?: (isFullfilled: boolean) => void;
+  snapAvailable?: boolean;
   raiseModalTrigger: boolean;
   setRaiseModalTrigger: (raiseModalTrigger: boolean) => void;
 }

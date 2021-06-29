@@ -23,6 +23,7 @@ const DraggableModal = ({
   surverys,
   paragraph,
   setFullfilled,
+  snapAvailable,
   raiseModalTrigger,
   setRaiseModalTrigger,
 }: ModalProp): JSX.Element => {
@@ -41,12 +42,14 @@ const DraggableModal = ({
 
   const onDrag = () => {
     const reactDraggable = document.querySelector(".react-draggable");
-    if (reactDraggable) {
+    if (snapAvailable && reactDraggable) {
       if (getCurrentY(reactDraggable) > (topBound + bottomBound) / 2) {
         setYpos(bottomBound);
       } else {
         setYpos(topBound);
       }
+    } else if (!snapAvailable && reactDraggable) {
+      setYpos(getCurrentY(reactDraggable));
     }
   };
 
@@ -65,7 +68,14 @@ const DraggableModal = ({
       setYpos(topBound);
     }
     setRaiseModalTrigger(false);
-  }, [raiseModalTrigger, ypos, bottomBound, setRaiseModalTrigger, topBound]);
+  }, [
+    raiseModalTrigger,
+    ypos,
+    bottomBound,
+    setRaiseModalTrigger,
+    topBound,
+    snapAvailable,
+  ]);
 
   return (
     <Draggable
