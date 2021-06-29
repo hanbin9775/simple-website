@@ -9,6 +9,7 @@ const type1Style = makeStyles({
   root: {
     color: interactColor,
     height: 8,
+    padding: "14px 0px !important",
   },
   thumb: {
     height: 15,
@@ -31,6 +32,7 @@ const type2Style = makeStyles({
   root: {
     color: interactColor,
     height: 30,
+    padding: "14px 0px !important",
   },
   thumb: {
     width: 15,

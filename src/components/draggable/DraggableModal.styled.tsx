@@ -24,7 +24,7 @@ export const Handle = styled.div`
 `;
 
 export const ContentWrapper = styled.div`
-  padding: 26px 20px;
+  padding: 26px 20px 58px 20px;
 `;
 
 export const Title = styled.h1``;
