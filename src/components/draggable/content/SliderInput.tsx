@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import Slider from "@material-ui/core/Slider";
 import { makeStyles } from "@material-ui/core/styles";
 import { SurveySliderProp } from "type";
 import { interactColor, grayColor } from "theme";
 import * as s from "./Content.styled";
+
+const percent = 0;
 
 const type1Style = makeStyles({
   root: {
@@ -39,7 +41,7 @@ const type2Style = makeStyles({
     bottom: 8,
     height: 40,
     borderRadius: 15,
-    backgroundColor: "#888888",
+    backgroundColor: `rgba(0,0,0,${percent})`,
     border: "1px solid white",
   },
   track: {
@@ -64,6 +66,8 @@ const SliderInput = ({
 }: SurveySliderProp): JSX.Element => {
   const type1Class = type1Style();
   const type2Class = type2Style();
+  const [sliderValue, setSliderValue] = useState(0);
+
   return (
     <s.SliderInputWrapper>
       <s.SliderInputLabels>
@@ -80,6 +84,11 @@ const SliderInput = ({
               thumb: type === 1 ? type1Class.thumb : type2Class.thumb,
               track: type === 1 ? type1Class.track : type2Class.track,
               rail: type === 1 ? type1Class.rail : type2Class.rail,
+            }}
+            onChange={(v) => {
+              if (typeof v === "number" && type === 2) {
+                setSliderValue(v);
+              }
             }}
           />
         </s.SliderInputDiv>
