@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 # 인생 주식 분석 서비스
 
-당신의 인생 그래프와 가장 비슷한 가상화폐 그래프를 찾아드립니다!
+당신의 인생 그래프와 가장 비슷한 가상화폐 & 주식  그래프를 찾아드립니다!
 
 ## Deployed by Firebase Hosting
 
