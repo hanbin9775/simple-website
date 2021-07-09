@@ -5,8 +5,6 @@ import { SurveySliderProp } from "type";
 import { interactColor, grayColor } from "theme";
 import * as s from "./Content.styled";
 
-const percent = 0;
-
 const type1Style = makeStyles({
   root: {
     color: interactColor,
@@ -36,14 +34,14 @@ const type2Style = makeStyles({
     height: 30,
     padding: "14px 0px !important",
   },
-  thumb: {
+  thumb: (props) => ({
     width: 15,
     bottom: 8,
     height: 40,
     borderRadius: 15,
-    backgroundColor: `rgba(0,0,0,${percent})`,
+    backgroundColor: `rgba(0,0,0,${props})`,
     border: "1px solid white",
-  },
+  }),
   track: {
     height: 30,
     borderRadius: 4,
@@ -65,8 +63,17 @@ const SliderInput = ({
   degreeStrings,
 }: SurveySliderProp): JSX.Element => {
   const type1Class = type1Style();
-  const type2Class = type2Style();
-  const [sliderValue, setSliderValue] = useState(0);
+  const [currentThumbStyle, setCurrentThumbStyle] = useState<number>(0);
+  const type2Class = type2Style(currentThumbStyle);
+
+  const handleEvent = (
+    event: React.ChangeEvent<Record<string, unknown>>,
+    newValue: number | number[]
+  ) => {
+    if (type === 2) {
+      setCurrentThumbStyle((newValue as number) / 100);
+    }
+  };
 
   return (
     <s.SliderInputWrapper>
@@ -85,11 +92,7 @@ const SliderInput = ({
               track: type === 1 ? type1Class.track : type2Class.track,
               rail: type === 1 ? type1Class.rail : type2Class.rail,
             }}
-            onChange={(v) => {
-              if (typeof v === "number" && type === 2) {
-                setSliderValue(v);
-              }
-            }}
+            onChange={handleEvent}
           />
         </s.SliderInputDiv>
       </s.SliderInputDivParent>
