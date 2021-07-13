@@ -39,7 +39,7 @@ const type2Style = makeStyles({
     bottom: 8,
     height: 40,
     borderRadius: 15,
-    backgroundColor: `rgba(0,0,0,${props})`,
+    backgroundColor: `rgb(${props},${props},${props})`,
     border: "1px solid white",
   }),
   track: {
@@ -63,15 +63,15 @@ const SliderInput = ({
   degreeStrings,
 }: SurveySliderProp): JSX.Element => {
   const type1Class = type1Style();
-  const [currentThumbStyle, setCurrentThumbStyle] = useState<number>(0);
-  const type2Class = type2Style(currentThumbStyle);
+  const [currentThumbValue, setCurrentThumbValue] = useState<number>(0);
+  const type2Class = type2Style(currentThumbValue);
 
   const handleEvent = (
     event: React.ChangeEvent<Record<string, unknown>>,
     newValue: number | number[]
   ) => {
     if (type === 2) {
-      setCurrentThumbStyle((newValue as number) / 100);
+      setCurrentThumbValue(255 * ((newValue as number) / 100));
     }
   };
 
