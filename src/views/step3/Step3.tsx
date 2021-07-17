@@ -28,7 +28,7 @@ const Step3 = (): JSX.Element => {
         poster={Poster3Src}
       />
       <DraggableModal
-        topBound={appHeight - 1580}
+        topBound={60}
         bottomBound={appHeight - 280}
         step={3}
         title="STEP #3"

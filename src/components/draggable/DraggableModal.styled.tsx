@@ -35,6 +35,11 @@ export const Describe = styled.p`
   margin-bottom: 40px;
 `;
 
+export const ScrollArea = styled.div`
+  overflow: scroll;
+  height: 400px;
+`;
+
 export const InputWrapper = styled.div`
   margin-bottom: 16px;
 `;

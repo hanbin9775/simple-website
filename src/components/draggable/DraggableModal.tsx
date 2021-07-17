@@ -110,16 +110,21 @@ const DraggableModal = ({
           )}
           {/* step2 : 이름과 나이 입력 */}
           {step === 2 && <Paragraph content={paragraph} />}
-          {step === 3 &&
-            surverys?.map((survey) => (
-              <>
-                <Paragraph content={survey.paragraph} />
-                <SliderInput
-                  type={survey.sliderInfo.type}
-                  degreeStrings={survey.sliderInfo.degreeStrings}
-                />
-              </>
-            ))}
+
+          {step === 3 && (
+            <s.ScrollArea className="not-draggable">
+              {surverys?.map((survey) => (
+                <>
+                  <Paragraph content={survey.paragraph} />
+                  <SliderInput
+                    type={survey.sliderInfo.type}
+                    degreeStrings={survey.sliderInfo.degreeStrings}
+                  />
+                </>
+              ))}
+            </s.ScrollArea>
+          )}
+
           {step === 4 && (
             <>
               <Paragraph content={paragraph} />
