@@ -1,3 +1,5 @@
+/* eslint-disable  no-nested-ternary, indent */
+
 import React, { useState } from "react";
 import Slider from "@material-ui/core/Slider";
 import { makeStyles } from "@material-ui/core/styles";
@@ -45,12 +47,12 @@ const type2Style = makeStyles({
     height: 30,
     padding: "14px 0px !important",
   },
-  thumb: (props) => ({
+  thumb: (props: { value: number; railBackgroundStyle: string }) => ({
     width: 15,
     bottom: 8,
     height: 40,
     borderRadius: 15,
-    backgroundColor: `rgb(${props},${props},${props})`,
+    backgroundColor: `rgb(${props.value},${props.value},${props.value})`,
     border: "1px solid white",
   }),
   track: {
@@ -58,22 +60,33 @@ const type2Style = makeStyles({
     borderRadius: 4,
     background: "none",
   },
-  rail: {
+  rail: (props: { value: number; railBackgroundStyle: string }) => ({
     height: 30,
     borderRadius: 4,
     opacity: 1,
     border: `1px solid ${grayColor}`,
-    background: skyGradientStyle,
-  },
+    background:
+      props.railBackgroundStyle === "blackWhite"
+        ? blackWhiteGradientStyle
+        : props.railBackgroundStyle === "rainbow"
+        ? rainbowGradientStyle
+        : props.railBackgroundStyle === "ocean"
+        ? oceanGradientStyle
+        : skyGradientStyle,
+  }),
 });
 
 const SliderInput = ({
   type,
+  gradientStyle,
   degreeStrings,
 }: SurveySliderProp): JSX.Element => {
   const type1Class = type1Style();
   const [currentThumbValue, setCurrentThumbValue] = useState<number>(0);
-  const type2Class = type2Style(currentThumbValue);
+  const type2Class = type2Style({
+    value: currentThumbValue,
+    railBackgroundStyle: gradientStyle as string,
+  });
 
   const handleEvent = (
     event: React.ChangeEvent<Record<string, unknown>>,

@@ -27,6 +27,7 @@ export interface SurveyObjectProp {
 
 export interface SurveySliderProp {
   type: number; // 0 or 1
+  gradientStyle?: string;
   degreeStrings: Array<string>;
 }
 

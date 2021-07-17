@@ -118,6 +118,7 @@ const DraggableModal = ({
                   <Paragraph content={survey.paragraph} />
                   <SliderInput
                     type={survey.sliderInfo.type}
+                    gradientStyle={survey.sliderInfo.gradientStyle}
                     degreeStrings={survey.sliderInfo.degreeStrings}
                   />
                 </>

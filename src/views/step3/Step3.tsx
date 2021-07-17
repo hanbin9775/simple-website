@@ -88,6 +88,7 @@ const Step3 = (): JSX.Element => {
             paragraph: `'나’를 떠올렸을 때 가장 잘 어울리는 밝기는 무엇입니까?`,
             sliderInfo: {
               type: 2,
+              gradientStyle: "blackWhite",
               degreeStrings: ["", "", "", "", "", "", ""],
             },
           },
@@ -95,6 +96,7 @@ const Step3 = (): JSX.Element => {
             paragraph: `당신이 추상 미술 작품을 구매한다면, 그 작품의 색은 어떤 색입니까?`,
             sliderInfo: {
               type: 2,
+              gradientStyle: "rainbow",
               degreeStrings: ["", "", "", "", "", "", ""],
             },
           },
@@ -102,6 +104,7 @@ const Step3 = (): JSX.Element => {
             paragraph: `바다를 떠올려 보십시오. 당신의 바다는 무슨 색입니까?`,
             sliderInfo: {
               type: 2,
+              gradientStyle: "ocean",
               degreeStrings: ["", "", "", "", "", "", ""],
             },
           },
@@ -109,6 +112,7 @@ const Step3 = (): JSX.Element => {
             paragraph: `하늘을 떠올려 보십시오. 당신의 하늘은 무슨 색입니까?`,
             sliderInfo: {
               type: 2,
+              gradientStyle: "sky",
               degreeStrings: ["", "", "", "", "", "", ""],
             },
           },
