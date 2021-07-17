@@ -59,7 +59,6 @@ const type2Style = makeStyles({
 
 const SliderInput = ({
   type,
-  labelStrings,
   degreeStrings,
 }: SurveySliderProp): JSX.Element => {
   const type1Class = type1Style();
@@ -77,10 +76,6 @@ const SliderInput = ({
 
   return (
     <s.SliderInputWrapper>
-      <s.SliderInputLabels>
-        <s.SliderInputLabel>{labelStrings[0]}</s.SliderInputLabel>
-        <s.SliderInputLabel>{labelStrings[1]}</s.SliderInputLabel>
-      </s.SliderInputLabels>
       <s.SliderInputDivParent>
         <s.SliderInputDiv>
           <Slider
