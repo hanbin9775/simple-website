@@ -28,6 +28,17 @@ const type1Style = makeStyles({
   },
 });
 
+const blackWhiteGradientStyle =
+  "linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 27%, rgba(255,255,255,1) 100%)";
+
+const rainbowGradientStyle =
+  "linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(255,154,0,1) 16%, rgba(208,222,33,1) 33%, rgba(79,220,74,1) 50%, rgba(63,218,216,1) 66%, rgba(47,201,226,1) 83%, rgba(28,127,238,1) 100%)";
+
+const oceanGradientStyle =
+  "linear-gradient(90deg, rgb(0, 46, 127) 0%, rgb(0, 214, 186) 100%)";
+
+const skyGradientStyle = "linear-gradient(to right, #82addb 0%,#ebb2b1 100%)";
+
 const type2Style = makeStyles({
   root: {
     color: interactColor,
@@ -52,8 +63,7 @@ const type2Style = makeStyles({
     borderRadius: 4,
     opacity: 1,
     border: `1px solid ${grayColor}`,
-    background:
-      "linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 27%, rgba(255,255,255,1) 100%)",
+    background: skyGradientStyle,
   },
 });
 
